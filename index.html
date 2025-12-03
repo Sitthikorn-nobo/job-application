@@ -3,73 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JOB APPLICATION FORM - TG (Mobile Optimized)</title>
+    <title>JOB APPLICATION FORM - TG (Mobile UX Optimized)</title>
     <style>
 /* ------------------------------------------------------------------- */
-/* GLOBAL SETUP & LAYOUT */
+/* GLOBAL SETUP & LAYOUT (Default for Desktop/Print) */
 /* ------------------------------------------------------------------- */
 body { font-family: 'Tahoma', 'Arial', sans-serif; font-size: 9pt; margin: 0; padding: 0; background-color: #f0f0f0; line-height: 1.3; }
 .application-container { width: 90%; max-width: 1200px; min-height: 29.7cm; margin: 20px auto; padding: 1cm 1.5cm; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); box-sizing: border-box; }
 
-/* ------------------------------------------------------------------- */
-/* INPUT & LINE STYLING (Default for Desktop/Print) */
-/* ------------------------------------------------------------------- */
+/* INPUT STYLES (Desktop) */
 input[type="text"], input[type="date"], input[type="number"], input[type="tel"], input[type="email"] {
-    width: 98%;
-    border: none;
-    border-bottom: 1px dotted black; 
-    padding: 0;
-    margin: 0;
-    background: transparent;
-    font-size: 11pt; 
-    font-weight: bold; 
-    box-sizing: border-box;
-    display: inline-block;
-    vertical-align: bottom;
+    width: 98%; border: none; border-bottom: 1px dotted black; padding: 0; margin: 0;
+    background: transparent; font-size: 11pt; font-weight: bold; box-sizing: border-box;
+    display: inline-block; vertical-align: bottom;
 }
 textarea { width: 100%; border: 1px solid black; box-sizing: border-box; min-height: 30px; font-size: 10pt; margin-top: 2px; }
 
-/* ------------------------------------------------------------------- */
-/* HEADER & TITLES & DATA TABLES (Default for Desktop/Print) */
-/* ------------------------------------------------------------------- */
-.header-table { width: 100%; border-collapse: collapse; margin-bottom: 5px; }
-.header-table td { padding: 0; vertical-align: top; }
-.logo-g { font-size: 20pt; font-weight: bold; color: #cc0000; margin-right: 5px; float: left; }
-.company-details { font-size: 9pt; line-height: 1.2; }
-
-/* Photo Box */
-.photo-cell { width: 150px; text-align: right; position: relative; } 
-.photo-box { 
-    border: 1px solid black; 
-    width: 80px; height: 90px; 
-    margin-left: auto;
-    margin-bottom: 3px;
-    position: relative;
-    overflow: hidden; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.attach-photo-text { font-size: 8pt; position: absolute; z-index: 10; padding: 5px; text-align: center; }
-.photo-box img { max-width: 100%; max-height: 100%; object-fit: contain; position: absolute; z-index: 1; display: none; }
-.photo-box input[type="file"] { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; z-index: 2; }
-.tg-logo-footer { font-weight: bold; font-size: 8pt; text-align: center; }
-
-h1 { text-align: center; font-size: 16pt; margin: 10px 0; }
-.notes-box { font-size: 9pt; line-height: 1.3; margin-bottom: 15px; border: 1px solid black; padding: 5px; }
-h2.section-title { font-size: 11pt; font-weight: bold; background-color: #f0f0f0; border: 1px solid black; padding: 3px 5px; margin: 15px 0 5px 0; }
-
+/* Table and Heading Styles (Desktop/Print) */
 .data-table { width: 100%; border-collapse: collapse; margin-top: 5px; font-size: 9pt; }
 .data-table th, .data-table td { border: 1px solid black; padding: 2px 5px; height: 20px; vertical-align: middle; }
 .data-table th { background-color: #f0f0f0; text-align: center; }
-
 .checkbox-group label { display: inline-flex; align-items: center; margin-right: 15px; }
-input[type="checkbox"], input[type="radio"] { -webkit-appearance: none; -moz-appearance: none; appearance: none; width: 10px; height: 10px; border: 1px solid black; margin-right: 5px; margin-left: 0; flex-shrink: 0; }
+input[type="checkbox"], input[type="radio"] { 
+    -webkit-appearance: none; -moz-appearance: none; appearance: none; 
+    width: 10px; height: 10px; border: 1px solid black; margin-right: 5px; margin-left: 0; flex-shrink: 0; 
+}
 input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { content: '✓'; font-size: 7pt; line-height: 1; display: block; text-align: center; color: black; }
 
 
 /* =================================================================== */
-/* 📱 MOBILE VIEW STYLES (Responsive Design for small screens) - FINAL OPTIMIZED */
+/* 📱 MOBILE VIEW STYLES (Responsive & UX Optimized) */
 /* =================================================================== */
 @media screen and (max-width: 768px) {
     .application-container {
@@ -80,17 +43,17 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
         min-height: auto;
     }
     
-    /* Header Block */
-    .header-table { margin-bottom: 10px; }
-    .header-table tr, .header-table td { display: block; width: 100%; }
-    .photo-cell { width: 100%; text-align: center; order: -1; padding: 5px 0; }
-    .photo-box { margin: 5px auto 10px; float: none; }
+    /* Header & Photo (Stacked Vertically) */
+    .header-table, .header-table tr, .header-table td { display: block; width: 100%; }
+    .photo-cell { order: -1; text-align: center; padding: 10px 0; }
+    .photo-box { margin: 0 auto 10px; float: none; }
     .company-details { text-align: center; }
     .logo-g { float: none; display: block; margin: 0 auto 5px; }
-    h2.section-title { margin: 10px 0 5px 0; padding: 8px 10px; font-size: 12pt; }
-    .notes-box { padding: 8px; }
 
-    /* General Table Conversion to Vertical Blocks (All Tables) */
+    h1 { font-size: 14pt; margin: 10px 0; }
+    h2.section-title { margin: 10px 0 5px 0; padding: 10px; font-size: 12pt; }
+    
+    /* Global Table Conversion to Vertical Blocks */
     .data-table { border: none !important; margin-top: 5px; }
     .data-table thead { display: none; }
     .data-table tr {
@@ -101,154 +64,111 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
     .data-table td {
         display: block;
         width: 100% !important; 
-        padding: 8px 0; /* เพิ่ม padding แนวตั้ง */
+        padding: 8px 10px; /* เพิ่มพื้นที่ */
         border: none !important;
-        border-bottom: 1px dotted #ccc !important; 
+        border-bottom: 1px solid #ddd !important; /* เส้นแบ่งรายการ */
         height: auto;
     }
-    .data-table tr:last-child td {
-        border-bottom: none !important;
-    }
+    .data-table tr:last-child td { border-bottom: none !important; }
 
-    /* Input & Label Stacking (General) */
+    /* Input Styling for Mobile (Full Width, Clearer Line) */
     .data-table td label {
         display: block; 
-        font-size: 10pt;
+        font-size: 9pt;
         font-weight: normal; 
-        margin-bottom: 3px;
+        margin-bottom: 5px;
     }
     input[type="text"], input[type="date"], input[type="number"], input[type="tel"], input[type="email"] {
-        width: 100%; /* Input เต็มบรรทัด */
+        width: 100%; 
         font-size: 11pt;
         font-weight: bold; 
-        border-bottom: 1px solid #666; /* ให้เส้นหนาขึ้น */
+        border-bottom: 1px solid #666; /* ให้เส้นหนาขึ้นเพื่อให้มองเห็นชัด */
+        padding-bottom: 2px;
     }
-    
-    /* Fix: ตาราง 3 คอลัมน์แรก (Date, Salary, Age/Weight/Height) */
-    .data-table tr:first-child td, .data-table tr:nth-child(2) td {
-        width: 100% !important;
-        border-bottom: 1px dotted #ccc !important;
-    }
-    .data-table tr:first-child td:nth-last-child(1) { /* Age/Weight/Height Group */
+
+    /* Fix: Age/Weight/Height Grouping */
+    .data-table tr:first-child td:nth-last-child(1) { 
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
     }
     .data-table tr:first-child td:nth-last-child(1) label {
-        width: 30%; /* แบ่งเป็น 3 ส่วน */
+        width: 30%; 
         display: flex;
         align-items: center;
         font-weight: normal;
         margin-right: 5px;
     }
     .data-table tr:first-child td:nth-last-child(1) input {
-        width: 50%; 
+        width: 60%; 
         display: inline;
     }
-
-    /* Fix: Military Status & Marital Status */
+    
+    /* Fix: Military/Marital Status Container Separation */
     .data-table td[style*="width: 30%;"], .data-table td[style*="width: 70%;"] {
         width: 100% !important;
         border-right: none !important;
-        border-bottom: 1px solid black !important; /* แยกกล่อง Military/Marital */
+        border-bottom: 1px solid black !important; 
         padding-bottom: 10px !important;
     }
-    .data-table td[style*="vertical-align: top;"] table, .data-table td[style*="vertical-align: top;"] table tr, .data-table td[style*="vertical-align: top;"] table td {
-        display: block; 
-        width: 100% !important;
-    }
-    .data-table td[style*="vertical-align: top;"] table td {
-        padding: 2px 0 !important;
-    }
-    /* Fix: Spouse details flex row */
-    td[colspan="4"] > div { flex-direction: column; }
-    td[colspan="4"] > div div { width: 100% !important; margin: 5px 0; }
-    
-    /* Fix: Family, Education, References (ตารางหลายคอลัมน์) */
-    .family-table, .education-table, .data-table:not(.skill-table) {
-        border: 1px solid black !important; 
-        margin-top: 5px;
-    }
-    .family-table tr, .education-table tr, .data-table tr {
-        border-bottom: 1px solid black;
-    }
-    .family-table td, .education-table td, .data-table td {
-        border: none;
-        border-bottom: 1px dotted #ccc !important;
-        width: 100% !important;
-        padding: 5px 10px;
-        height: auto;
-    }
-    .family-table tr td:first-child, .education-table tr td:first-child { 
+
+    /* Fix: Family & Education Table Headers (Use bold text) */
+    .family-table tr td:first-child, .education-table tr td:first-child, .data-table tr td:first-child[style*="width: 5%;"] {
         font-weight: bold;
         background-color: #f9f9f9;
+        display: block;
     }
-
-    /* Fix: Employment History Layout */
-    .employment-block { padding: 10px; margin-bottom: 15px !important; }
+    
+    /* Fix: Employment History - Clear Blocks */
+    .employment-block { 
+        padding: 10px; 
+        margin-bottom: 15px !important; 
+        border: 1px solid #ccc !important;
+    }
     .employment-block > div { flex-direction: column; align-items: flex-start !important; }
-    .employment-block label { display: block; width: 100% !important; margin: 5px 0 0 0 !important; font-weight: normal !important; }
-    .employment-block label:first-child { font-weight: bold !important; }
-    .employment-block input { width: 100% !important; font-weight: normal; }
 
-    /* Fix: Skill Table (ภาษา) - จัดกลุ่ม Radio Button เป็นรายการแนวตั้ง */
+    /* Fix: Special Skill Table (ภาษา) - Clean List View */
     .skill-table { border: 1px solid black !important; }
     .skill-table tbody tr { display: block; border-top: 1px solid black; }
-    .skill-table td {
-        display: block;
-        width: 100% !important;
-        padding: 5px 10px;
-        border-bottom: 1px dotted #ccc !important;
-    }
+    
     .skill-table td:first-child { 
         font-weight: bold;
         background-color: #f0f0f0;
         border-bottom: 1px solid black !important;
         width: 100% !important;
+        display: block;
     }
-    /* Grouping radio options into vertical list */
-    .skill-table td:nth-child(2), .skill-table td:nth-child(3), .skill-table td:nth-child(4),
-    .skill-table td:nth-child(5), .skill-table td:nth-child(6), .skill-table td:nth-child(7),
-    .skill-table td:nth-child(8), .skill-table td:nth-child(9), .skill-table td:nth-child(10),
-    .skill-table td:nth-child(11), .skill-table td:nth-child(12), .skill-table td:nth-child(13) {
-        display: flex; /* แสดง Fluent, Good, Fair ในบรรทัดเดียว */
+    /* Grouping radio options for better list view */
+    .skill-table td:nth-child(2), .skill-table td:nth-child(5), 
+    .skill-table td:nth-child(8), .skill-table td:nth-child(11) {
+        /* This displays the main category (Fluent) + Radio Button */
+        display: flex; 
         justify-content: space-between;
         align-items: center;
-        border: none !important;
-        border-bottom: 1px dotted #eee !important;
         width: 100% !important;
+        padding: 5px 10px;
+        border-bottom: 1px dotted #ccc !important;
     }
-    .skill-table td:nth-child(2)::before { content: 'Listenning (Fluent/Good/Fair)'; font-weight: bold; margin-right: 10px; }
-    .skill-table td:nth-child(5)::before { content: 'Speaking (Fluent/Good/Fair)'; font-weight: bold; margin-right: 10px; }
-    .skill-table td:nth-child(8)::before { content: 'Reading (Fluent/Good/Fair)'; font-weight: bold; margin-right: 10px; }
-    .skill-table td:nth-child(11)::before { content: 'Writing (Fluent/Good/Fair)'; font-weight: bold; margin-right: 10px; }
-    
-    .skill-table td:nth-child(2), .skill-table td:nth-child(5), .skill-table td:nth-child(8), .skill-table td:nth-child(11) {
-        border-bottom: 1px solid #ccc !important;
-        order: 1; /* จัดเรียงใหม่ */
-    }
+    /* Hide the redundant Good/Fair cells on mobile */
     .skill-table td:nth-child(3), .skill-table td:nth-child(4), .skill-table td:nth-child(6), .skill-table td:nth-child(7), 
     .skill-table td:nth-child(9), .skill-table td:nth-child(10), .skill-table td:nth-child(12), .skill-table td:nth-child(13) {
-        display: none !important; /* ซ่อนคอลัมน์ Good และ Fair ที่แยกออกมา */
+        display: none !important; 
     }
-    .skill-table td:nth-last-child(1) { /* Computer Knowledge */
-        border: none !important;
-        display: block; 
-    }
+    .skill-table td:nth-child(2)::before { content: 'Listenning (ฟัง): '; font-weight: normal; }
+    .skill-table td:nth-child(5)::before { content: 'Speaking (พูด): '; font-weight: normal; }
+    .skill-table td:nth-child(8)::before { content: 'Reading (อ่าน): '; font-weight: normal; }
+    .skill-table td:nth-child(11)::before { content: 'Writing (เขียน): '; font-weight: normal; }
     .skill-table td input[type="radio"] { margin-left: 10px; }
 
-
-    /* Fix General Information Layout */
+    /* Fix General Info and Signature Blocks */
     div[style*="display: flex;"] { flex-direction: column; }
     div[style*="margin-left: 10px;"], div[style*="margin-left: 20px;"] { margin-left: 0 !important; margin-top: 10px; }
     
-    /* Fix Signature block */
-    div[style*="justify-content: flex-end;"] { justify-content: flex-start !important; }
     div[style*="text-align: right;"] { text-align: left !important; width: 100%; }
     div[style*="align-items: flex-end;"] { flex-direction: column; align-items: flex-start !important; }
     div[style*="align-items: flex-end;"] input { width: 100% !important; margin: 5px 0 !important; }
-
 }
+
 /* ------------------------------------------------------------------- */
 /* 🖨️ PRINT STYLES (A4 Layout for Printing) - KEEP ORIGINAL */
 /* ------------------------------------------------------------------- */
@@ -266,44 +186,37 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
         padding: 0.5cm 1cm; 
         width: 21cm; 
     }
+    /* Ensure print inputs look correct */
     input[type="text"], input[type="date"], input[type="number"], input[type="tel"], input[type="email"], .data-table input { 
         border-bottom: 1px solid black !important; 
         font-weight: bold !important; 
     }
     
     .page-break-after-p1 { page-break-after: always; }
-    
     .submit-button, .results-box { display: none; }
     
-    /* คืนค่าตารางทั้งหมดกลับไปแสดงผลแบบปกติเมื่อพิมพ์ */
-    .data-table thead { display: table-header-group !important; }
-    .data-table tr { display: table-row !important; border-bottom: 1px solid black !important; }
-    .data-table td { display: table-cell !important; border: 1px solid black !important; width: auto !important; padding: 2px 5px !important; }
-    .skill-table td { display: table-cell !important; justify-content: center !important; flex-direction: row !important; }
-    .skill-table td:nth-child(1) { background-color: #f0f0f0 !important; } 
-    /* คืนค่าคอลัมน์ Good และ Fair ที่ซ่อนไป */
+    /* Restore Table Structure for Printing */
+    .data-table thead, .data-table tr, .data-table td { display: table-row-group !important; display: table-row !important; display: table-cell !important; }
+    .data-table td { border: 1px solid black !important; width: auto !important; padding: 2px 5px !important; }
+    
+    /* Restore Skill Table Columns */
     .skill-table td:nth-child(3), .skill-table td:nth-child(4), .skill-table td:nth-child(6), .skill-table td:nth-child(7), 
     .skill-table td:nth-child(9), .skill-table td:nth-child(10), .skill-table td:nth-child(12), .skill-table td:nth-child(13) {
         display: table-cell !important;
     }
+    /* Remove Mobile Labels/Styles */
     .skill-table td:nth-child(2)::before, .skill-table td:nth-child(5)::before, 
     .skill-table td:nth-child(8)::before, .skill-table td:nth-child(11)::before {
         content: none !important;
     }
     .skill-table td:nth-child(2), .skill-table td:nth-child(5), .skill-table td:nth-child(8), .skill-table td:nth-child(11) {
         border-bottom: 1px solid black !important;
-        order: 0; 
     }
 
-    /* คืนค่า Flex/Block เดิม */
+    /* Restore Flex/Block for Signature/Employment */
     div[style*="display: flex;"] { display: flex !important; flex-direction: row !important; }
     .employment-block label { display: inline !important; width: auto !important; margin: 0 !important; }
     .employment-block input { width: auto !important; }
-    .data-table tr:first-child td:nth-last-child(1) label, .data-table tr:first-child td:nth-last-child(1) input {
-        width: auto !important;
-        display: inline !important;
-        margin-right: 5px !important;
-    }
 }
 </style>
 <script>
@@ -788,7 +701,7 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
         </div>
 
         <div style="text-align: center; margin-top: 20px;">
-            <button type="button" class="submit-button" onclick="window.print()" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; cursor: pointer;">บันทึกใบสมัคร (Save Application)</button>
+            <button type="button" class="submit-button" onclick="window.print()" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; cursor: pointer; border-radius: 5px;">บันทึกใบสมัคร (Save Application)</button>
         </div>
 
     </form>
