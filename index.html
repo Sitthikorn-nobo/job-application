@@ -6,7 +6,7 @@
     <title>JOB APPLICATION FORM - TG (Final Print Layout)</title>
     <style>
 /* ------------------------------------------------------------------- */
-/* GLOBAL SETUP & LAYOUT (ปรับปรุงให้รองรับ Desktop/Print) */
+/* GLOBAL SETUP & LAYOUT */
 /* ------------------------------------------------------------------- */
 body { font-family: 'Tahoma', 'Arial', sans-serif; font-size: 9pt; margin: 0; padding: 0; background-color: #f0f0f0; line-height: 1.3; }
 .application-container { width: 90%; max-width: 1200px; min-height: 29.7cm; margin: 20px auto; padding: 1cm 1.5cm; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); box-sizing: border-box; }
@@ -38,7 +38,7 @@ textarea { width: 100%; border: 1px solid black; box-sizing: border-box; min-hei
 .company-details { font-size: 9pt; line-height: 1.2; }
 
 /* กล่องรูป: Fix ตำแหน่งและซ้อนทับ */
-.photo-cell { width: 25%; text-align: right; position: relative; } /* กำหนดความกว้างคืนสำหรับ Desktop */
+.photo-cell { width: 25%; text-align: right; position: relative; } 
 .photo-box { 
     border: 1px solid black; 
     width: 80px; height: 90px; 
@@ -67,17 +67,23 @@ h2.section-title { font-size: 11pt; font-weight: bold; background-color: #f0f0f0
 input[type="checkbox"], input[type="radio"] { -webkit-appearance: none; -moz-appearance: none; appearance: none; width: 10px; height: 10px; border: 1px solid black; margin-right: 5px; margin-left: 0; flex-shrink: 0; }
 input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { content: '✓'; font-size: 7pt; line-height: 1; display: block; text-align: center; color: black; }
 
-/* กำหนดความกว้างคอลัมน์คงที่สำหรับ Desktop View (ยกเว้นส่วนย่อยใน HTML) */
+/* Desktop Column Widths (แทนที่ Inline Style) */
 .col-25 { width: 25%; }
 .col-33 { width: 33.33%; }
 .col-40 { width: 40%; }
 .col-60 { width: 60%; }
 .col-75 { width: 75%; }
 
+/* ------------------------------------------------------------------- */
+/* START MOBILE RESPONSIVE STYLES (V4 - FINAL FIX) */
+/* ------------------------------------------------------------------- */
 
-/* ------------------------------------------------------------------- */
-/* START MOBILE RESPONSIVE STYLES (V4 - LAYOUT CLEANUP) */
-/* ------------------------------------------------------------------- */
+/* Aggressive Table Force Block */
+.force-block, .force-block tr, .force-block td, .force-block th {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
 
 @media screen and (max-width: 768px) {
     /* 1. CONTAINER หลัก */
@@ -126,9 +132,7 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
     
     /* 4. DATA TABLES: ยุบโครงสร้างตารางและเซลล์ให้เรียงซ้อนกัน */
     .data-table, .data-table tr, .data-table tbody, .data-table th, .data-table td {
-        display: block !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
+        /* ใช้ .force-block ข้างบนเพื่อบังคับซ้อน */
         border-left: none !important;
         border-right: none !important;
         border-bottom: 1px solid #ccc !important;
@@ -172,9 +176,10 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
         width: 100% !important;
         margin-left: 0 !important;
     }
-
-    /* ล้างการกำหนดความกว้าง Desktop ที่เคยมี */
+    
+    /* บังคับให้ Column Desktop กลายเป็น 100% บนมือถือ */
     .col-25, .col-33, .col-40, .col-60, .col-75 { width: 100% !important; }
+
 }
 /* ------------------------------------------------------------------- */
 /* END MOBILE RESPONSIVE STYLES */
@@ -272,7 +277,7 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
                 </ol>
             </div>
 
-            <table class="data-table" style="border: 1px solid black; margin-top: 0;">
+            <table class="data-table force-block" style="border: 1px solid black; margin-top: 0;">
                 <tr style="height: 25px; border-bottom: none;">
                     <td class="col-25" style="border: none; padding-right: 0;"><label>Date (วันที่สมัคร)</label><input type="date" name="date_applied" style="width: 50%;"></td>
                     <td class="col-40" style="border: none; padding-left: 5px;"><label>Expected Salaly (เงินเดือนที่คาดหวัง)</label><input type="text" name="expected_salary" style="width: 50%;"></td>
@@ -290,7 +295,7 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
 
             <h2 class="section-title">PERSONAL DATA (ข้อมูลส่วนตัว)</h2>
 
-            <table class="data-table" style="border: 1px solid black; margin-top: -1px;">
+            <table class="data-table force-block" style="border: 1px solid black; margin-top: -1px;">
                 <tr style="height: 25px;">
                     <td class="col-40"><label>ชื่อ (นาย/นาง/นางสาว) / Name (MR./MRS./MISS)</label><input type="text" name="full_name"></td>
                     <td class="col-25"><label>ชื่อเล่น / Nick Name</label><input type="text" name="nick_name"></td>
@@ -310,7 +315,7 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
                 <tr><td colspan="3"><label>ที่อยู่ปัจจุบันที่สามารถติดต่อได้สะดวก / Present Address</label><input type="text" name="address_present"></td></tr>
             </table>
             
-            <table class="data-table" style="border: 1px solid black; margin-top: -1px;">
+            <table class="data-table force-block" style="border: 1px solid black; margin-top: -1px;">
                 <tr>
                     <td class="col-40" style="border-right: 1px solid black; vertical-align: top;">
                         <label style="font-weight: bold;">Military Status (สถานะทางทหาร)</label>
@@ -350,7 +355,7 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
             </table>
 
             <h2 class="section-title" style="margin-top: 10px;">Family (ครอบครัว)</h2>
-            <table class="data-table family-table">
+            <table class="data-table family-table force-block">
                 <thead>
                     <tr>
                         <th class="col-15">Family (ครอบครัว)</th>
@@ -389,7 +394,7 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
         </div>
         <h2 class="section-title">EDUCATION HISTORY (ประวัติการศึกษา)</h2>
 
-        <table class="data-table education-table">
+        <table class="data-table education-table force-block">
             <thead>
                 <tr>
                     <th class="col-20">ระดับการศึกษา / Level of Education</th>
@@ -519,7 +524,7 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
 
         <h2 class="section-title">SPECIAL SKILL (ความสามารถพิเศษ)</h2>
 
-        <table class="data-table skill-table">
+        <table class="data-table skill-table force-block">
             <thead>
                 <tr>
                     <th rowspan="2" class="col-15">ความสามารถทางภาษา / Language Proficiency</th>
@@ -599,7 +604,7 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
         </div>
 
         <h2 class="section-title">TRAINING HISTORY (ประวัติการฝึกอบรม)</h2>
-        <table class="data-table">
+        <table class="data-table force-block">
             <thead>
                 <tr>
                     <th>Training Course (ชื่อหลักสูตร)</th>
@@ -648,7 +653,7 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
         </div>
 
         <h2 class="section-title">REFERENCES (บุคคลอ้างอิง)</h2>
-        <table class="data-table">
+        <table class="data-table force-block">
             <thead>
                 <tr>
                     <th>#</th>
