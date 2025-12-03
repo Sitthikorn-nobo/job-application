@@ -93,6 +93,43 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
     
     .submit-button, .results-box { display: none; }
 }
+/* ------------------------------------------------------------------- */
+/* GLOBAL SETUP & LAYOUT */
+/* ------------------------------------------------------------------- */
+body { font-family: 'Tahoma', 'Arial', sans-serif; /* ... โค้ดเดิม ... */ }
+.application-container { width: 90%; max-width: 1200px; /* ... โค้ดเดิม ... */ }
+/* ... CSS ส่วนอื่นๆ ที่คุณเขียนไว้ ... */
+
+/* ------------------------------------------------------------------- */
+/* *** เริ่มแทรกโค้ด MOBILE RESPONSIVE ตรงนี้ *** */
+/* ------------------------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+    /* 1. CONTAINER หลัก */
+    .application-container {
+        width: 100%; 
+        /* ... โค้ดแก้ไข Responsive ทั้งหมดที่ผมให้ไป ... */
+    }
+    
+    /* ... โค้ด @media screen and (max-width: 768px) ปิดท้ายตรงนี้ ... */
+}
+
+
+/* ------------------------------------------------------------------- */
+/* สิ้นสุดส่วน Mobile Responsive */
+/* ------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------- */
+/* PRINT STYLES (2-Page Control & Centering Fix) */
+/* ------------------------------------------------------------------- */
+@page { 
+    size: A4; 
+    /* ... โค้ด @page เดิม ... */
+}
+@media print {
+    body { margin: 0; padding: 0; } 
+    /* ... โค้ด @media print เดิม ... */
+}
 </style>
 <script>
     // JavaScript สำหรับแสดงรูปภาพที่ผู้ใช้อัปโหลดในกรอบ (Image Fix)
@@ -582,3 +619,4 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
     </form>
 </body>
 </html>
+
