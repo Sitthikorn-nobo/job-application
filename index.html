@@ -38,7 +38,7 @@ textarea { width: 100%; border: 1px solid black; box-sizing: border-box; min-hei
 .company-details { font-size: 9pt; line-height: 1.2; }
 
 /* กล่องรูป: Fix ตำแหน่งและซ้อนทับ */
-.photo-cell { width: 150px; text-align: right; position: relative; } 
+.photo-cell { text-align: right; position: relative; } 
 .photo-box { 
     border: 1px solid black; 
     width: 80px; height: 90px; 
@@ -69,7 +69,7 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
 
 
 /* ------------------------------------------------------------------- */
-/* START MOBILE RESPONSIVE STYLES (V3 - Final Attempt) */
+/* START MOBILE RESPONSIVE STYLES (V3 - FINAL FIX) */
 /* ------------------------------------------------------------------- */
 
 @media screen and (max-width: 768px) {
@@ -136,6 +136,7 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
     .data-table td { padding: 5px 10px !important; height: auto !important; }
     
     /* 5. FLEX/GRID LAYOUTS (จัดการส่วนที่มีการใช้ 'display: flex;') */
+    /* เนื่องจากลบ inline style width ออกไปแล้ว โค้ดนี้จะบังคับให้เรียงซ้อน */
     div[style*="display: flex;"], .employment-block > div {
         display: block !important;
         flex-direction: column !important;
@@ -236,7 +237,7 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
         <div class="page-break-after-p1">
             <table class="header-table">
                 <tr>
-                    <td style="width: 75%;">
+                    <td>
                         <div style="display: flex; align-items: flex-start;">
                             <div class="logo-g">G</div>
                             <div class="company-details">
@@ -248,7 +249,7 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
                         </div>
                     </td>
                     <td class="photo-cell">
-                        <div class="photo-box" style="float: right;">
+                        <div class="photo-box">
                             <div class="attach-photo-text">Attach photo 1 นิ้ว (ติดรูปถ่าย)</div>
                             <img id="photo-preview" src="" alt="Photo Preview">
                             <input type="file" name="applicant_photo" accept="image/*" onchange="previewImage(event)">
@@ -269,9 +270,9 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
 
             <table class="data-table" style="border: 1px solid black; margin-top: 0;">
                 <tr style="height: 25px; border-bottom: none;">
-                    <td style="width: 25%; border: none; padding-right: 0;"><label>Date (วันที่สมัคร)</label><input type="date" name="date_applied" style="width: 50%;"></td>
-                    <td style="width: 35%; border: none; padding-left: 5px;"><label>Expected Salaly (เงินเดือนที่คาดหวัง)</label><input type="text" name="expected_salary" style="width: 50%;"></td>
-                    <td style="width: 40%; border: none; border-left: 1px solid black; padding-left: 5px;">
+                    <td style="border: none; padding-right: 0;"><label>Date (วันที่สมัคร)</label><input type="date" name="date_applied" style="width: 50%;"></td>
+                    <td style="border: none; padding-left: 5px;"><label>Expected Salaly (เงินเดือนที่คาดหวัง)</label><input type="text" name="expected_salary" style="width: 50%;"></td>
+                    <td style="border: none; border-left: 1px solid black; padding-left: 5px;">
                         <label style="margin-right: 5px;">Age</label><input type="number" name="age" style="width: 15%; margin-right: 5px;">
                         <label style="margin-right: 5px;">Weight</label><input type="number" name="weight" style="width: 15%; margin-right: 5px;">
                         <label style="margin-right: 5px;">Height</label><input type="number" name="height" style="width: 15%;">
@@ -287,9 +288,9 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
 
             <table class="data-table" style="border: 1px solid black; margin-top: -1px;">
                 <tr style="height: 25px;">
-                    <td style="width: 40%;"><label>ชื่อ (นาย/นาง/นางสาว) / Name (MR./MRS./MISS)</label><input type="text" name="full_name"></td>
-                    <td style="width: 20%;"><label>ชื่อเล่น / Nick Name</label><input type="text" name="nick_name"></td>
-                    <td style="width: 40%;"><label>อีเมล์ / E-mail</label><input type="email" name="email"></td>
+                    <td><label>ชื่อ (นาย/นาง/นางสาว) / Name (MR./MRS./MISS)</label><input type="text" name="full_name"></td>
+                    <td><label>ชื่อเล่น / Nick Name</label><input type="text" name="nick_name"></td>
+                    <td><label>อีเมล์ / E-mail</label><input type="email" name="email"></td>
                 </tr>
                 <tr style="height: 25px;">
                     <td><label>วัน/เดือน/ปี เกิด / Date of Birth</label><input type="date" name="dob"></td>
@@ -307,7 +308,7 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
             
             <table class="data-table" style="border: 1px solid black; margin-top: -1px;">
                 <tr>
-                    <td style="width: 30%; border-right: 1px solid black; vertical-align: top;">
+                    <td style="border-right: 1px solid black; vertical-align: top;">
                         <label style="font-weight: bold;">Military Status (สถานะทางทหาร)</label>
                         <div class="checkbox-group" style="margin-top: 5px;">
                             <div style="margin-bottom: 5px;"><input type="checkbox" name="military_status[]" value="Completed"><label>Completed (ผ่านการเกณฑ์ทหาร)</label></div>
@@ -315,27 +316,27 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
                             <div style="display: flex; align-items: center;"><label>Other (อื่นๆระบุ)</label><input type="text" name="military_other" style="flex-grow: 1;"></div>
                         </div>
                     </td>
-                    <td style="width: 70%; vertical-align: top;">
+                    <td style="vertical-align: top;">
                         <table style="width: 100%; border-collapse: collapse; border: none;">
                             <tr style="border: none;">
                                 <td colspan="4" style="padding: 0; border: none; font-weight: bold;"><label>Marital Status</label></td>
                             </tr>
                             <tr style="border: none;">
-                                <td style="width: 25%; padding: 0; border: none;"><div class="checkbox-group"><input type="radio" name="marital_status" value="Single"><label>Single (โสด)</label></div></td>
-                                <td style="width: 40%; padding: 0; border: none;"><div class="checkbox-group"><input type="radio" name="marital_status" value="Formal"><label>Formal Marriage (สมรสจดทะเบียน)</label></div></td>
-                                <td style="width: 35%; padding: 0; border: none;"><div class="checkbox-group"><input type="radio" name="marital_status" value="Separated"><label>Separated (แยกกันอยู่)</label></div></td>
+                                <td style="padding: 0; border: none;"><div class="checkbox-group"><input type="radio" name="marital_status" value="Single"><label>Single (โสด)</label></div></td>
+                                <td style="padding: 0; border: none;"><div class="checkbox-group"><input type="radio" name="marital_status" value="Formal"><label>Formal Marriage (สมรสจดทะเบียน)</label></div></td>
+                                <td style="padding: 0; border: none;"><div class="checkbox-group"><input type="radio" name="marital_status" value="Separated"><label>Separated (แยกกันอยู่)</label></div></td>
                             </tr>
                             <tr style="border: none;">
-                                <td style="width: 40%; padding: 0; border: none;"><div class="checkbox-group"><input type="radio" name="marital_status" value="Informal"><label>Informal Marriage (สมรสไมจดทะเบียน)</label></div></td>
+                                <td style="padding: 0; border: none;"><div class="checkbox-group"><input type="radio" name="marital_status" value="Informal"><label>Informal Marriage (สมรสไมจดทะเบียน)</label></div></td>
                                 <td colspan="3" style="padding: 0; border: none; text-align: right;"><label>จำนวนบุตรกี่คน</label><input type="number" name="num_children" style="width: 10%;"> Person</td>
                             </tr>
                             <tr style="border: none;">
                                 <td colspan="4" style="padding: 0; border: none;">
                                     <div style="display: flex; flex-wrap: wrap; margin-top: 5px;">
-                                        <div style="width: 35%;"><label>ชื่อคู่สมรส / Spouse's Name</label><input type="text" name="spouse_name"></div>
-                                        <div style="width: 15%;"><label>อายุ / Age</label><input type="number" name="spouse_age"></div>
-                                        <div style="width: 25%;"><label>อาชีพ / Occupation</label><input type="text" name="spouse_occupation"></div>
-                                        <div style="width: 25%;"><label>ที่ทำงานของคู่สมรส / Present employment</label><input type="text" name="spouse_company"></div>
+                                        <div><label>ชื่อคู่สมรส / Spouse's Name</label><input type="text" name="spouse_name"></div>
+                                        <div><label>อายุ / Age</label><input type="number" name="spouse_age"></div>
+                                        <div><label>อาชีพ / Occupation</label><input type="text" name="spouse_occupation"></div>
+                                        <div><label>ที่ทำงานของคู่สมรส / Present employment</label><input type="text" name="spouse_company"></div>
                                     </div>
                                 </td>
                             </tr>
@@ -348,12 +349,12 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
             <table class="data-table family-table">
                 <thead>
                     <tr>
-                        <th style="width: 15%;">Family (ครอบครัว)</th>
-                        <th style="width: 30%;">Name-Surname (ชื่อ-สกุล)</th>
-                        <th style="width: 10%;">Age (อายุ)</th>
-                        <th style="width: 10%;">Status (สถานภาพ)</th>
-                        <th style="width: 20%;">Occupation/Company (อาชีพ/บริษัท)</th>
-                        <th style="width: 15%;">Mobile No. (โทรศัพท์)</th>
+                        <th>Family (ครอบครัว)</th>
+                        <th>Name-Surname (ชื่อ-สกุล)</th>
+                        <th>Age (อายุ)</th>
+                        <th>Status (สถานภาพ)</th>
+                        <th>Occupation/Company (อาชีพ/บริษัท)</th>
+                        <th>Mobile No. (โทรศัพท์)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -387,12 +388,12 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
         <table class="data-table education-table">
             <thead>
                 <tr>
-                    <th style="width: 20%;">ระดับการศึกษา / Level of Education</th>
-                    <th style="width: 5%;"></th>
-                    <th style="width: 25%;">สถาบันการศึกษา / School and/or Institute</th>
-                    <th style="width: 20%;">(เดือน/ปีที่เริ่ม-เดือน/ปีที่จบ) / Period of Study</th>
-                    <th style="width: 20%;">วุฒิการศึกษา/วิชาเอก / Degree/Major</th>
-                    <th style="width: 10%;">เกรดเฉลี่ย / GPA</th>
+                    <th>ระดับการศึกษา / Level of Education</th>
+                    <th></th>
+                    <th>สถาบันการศึกษา / School and/or Institute</th>
+                    <th>(เดือน/ปีที่เริ่ม-เดือน/ปีที่จบ) / Period of Study</th>
+                    <th>วุฒิการศึกษา/วิชาเอก / Degree/Major</th>
+                    <th>เกรดเฉลี่ย / GPA</th>
                 </tr>
             </thead>
             <tbody>
@@ -413,31 +414,31 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
         <div class="employment-block" style="border: 1px solid black; padding: 5px; margin-bottom: 10px;">
             <div style="display: flex; flex-wrap: wrap; align-items: center;">
                 <label style="font-weight: bold; white-space: nowrap; flex: 0 0 30%;">1.COMPANY NAME (ชื่อบริษัท) :</label> 
-                <input type="text" name="emp_1_company" style="width: 40%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Basic Salary (ฐานเงินเดือน):</label><input type="text" name="emp_1_salary" style="width: 10%; margin-right: 5px;">Baht
+                <input type="text" name="emp_1_company">
+                <label style="white-space: nowrap;">Basic Salary (ฐานเงินเดือน):</label><input type="text" name="emp_1_salary">Baht
             </div>
             
             <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Address of company (ที่อยู่บริษัท):</label><input type="text" name="emp_1_address" style="width: 40%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Position (ค่าตำแหน่ง):</label><input type="text" name="emp_1_position_inc" style="width: 10%; margin-right: 5px;">Baht
+                <label style="white-space: nowrap; flex: 0 0 30%;">Address of company (ที่อยู่บริษัท):</label><input type="text" name="emp_1_address">
+                <label style="white-space: nowrap;">Position (ค่าตำแหน่ง):</label><input type="text" name="emp_1_position_inc">Baht
             </div>
 
             <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Tel. No. (โทรศัพท์):</label><input type="tel" name="emp_1_tel" style="width: 15%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Type of Business (ลักษณะธุรกิจ):</label><input type="text" name="emp_1_type" style="width: 25%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Cost of Living (ค่าครองชีพ):</label><input type="text" name="emp_1_cost_live" style="width: 10%; margin-right: 5px;">Baht
+                <label style="white-space: nowrap; flex: 0 0 30%;">Tel. No. (โทรศัพท์):</label><input type="tel" name="emp_1_tel">
+                <label style="white-space: nowrap;">Type of Business (ลักษณะธุรกิจ):</label><input type="text" name="emp_1_type">
+                <label style="white-space: nowrap;">Cost of Living (ค่าครองชีพ):</label><input type="text" name="emp_1_cost_live">Baht
             </div>
 
             <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Date of employment (ว.ด.ป. ที่เริ่มทํางาน) : From (จากวันที่)</label><input type="date" name="emp_1_from" style="width: 15%; margin-right: 5px;">
-                <label style="white-space: nowrap;">To (ถึงวันที่)</label><input type="date" name="emp_1_to" style="width: 15%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Other Income (รายได้อื่นๆ):</label><input type="text" name="emp_1_other_inc" style="width: 10%; margin-right: 5px;">Baht
+                <label style="white-space: nowrap; flex: 0 0 30%;">Date of employment (ว.ด.ป. ที่เริ่มทํางาน) : From (จากวันที่)</label><input type="date" name="emp_1_from">
+                <label style="white-space: nowrap;">To (ถึงวันที่)</label><input type="date" name="emp_1_to">
+                <label style="white-space: nowrap;">Other Income (รายได้อื่นๆ):</label><input type="text" name="emp_1_other_inc">Baht
             </div>
 
             <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Position (ตำแหน่ง):</label><input type="text" name="emp_1_title" style="width: 25%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Department (ฝ่าย):</label><input type="text" name="emp_1_dept" style="width: 25%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Reason of Leaving (สาเหตุที่ลาออก):</label><input type="text" name="emp_1_reason" style="width: 15%;">
+                <label style="white-space: nowrap; flex: 0 0 30%;">Position (ตำแหน่ง):</label><input type="text" name="emp_1_title">
+                <label style="white-space: nowrap;">Department (ฝ่าย):</label><input type="text" name="emp_1_dept">
+                <label style="white-space: nowrap;">Reason of Leaving (สาเหตุที่ลาออก):</label><input type="text" name="emp_1_reason">
             </div>
 
             <label style="display: block; font-weight: bold; margin-top: 5px;">Describe Major Duties (รายละเอียดของงาน):</label>
@@ -447,31 +448,31 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
         <div class="employment-block" style="border: 1px solid black; padding: 5px; margin-bottom: 10px;">
             <div style="display: flex; flex-wrap: wrap; align-items: center;">
                 <label style="font-weight: bold; white-space: nowrap; flex: 0 0 30%;">2.COMPANY NAME (ชื่อบริษัท) :</label> 
-                <input type="text" name="emp_2_company" style="width: 40%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Basic Salary (ฐานเงินเดือน):</label><input type="text" name="emp_2_salary" style="width: 10%; margin-right: 5px;">Baht
+                <input type="text" name="emp_2_company">
+                <label style="white-space: nowrap;">Basic Salary (ฐานเงินเดือน):</label><input type="text" name="emp_2_salary">Baht
             </div>
             
             <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Address of company (ที่อยู่บริษัท):</label><input type="text" name="emp_2_address" style="width: 40%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Position (ค่าตำแหน่ง):</label><input type="text" name="emp_2_position_inc" style="width: 10%; margin-right: 5px;">Baht
+                <label style="white-space: nowrap; flex: 0 0 30%;">Address of company (ที่อยู่บริษัท):</label><input type="text" name="emp_2_address">
+                <label style="white-space: nowrap;">Position (ค่าตำแหน่ง):</label><input type="text" name="emp_2_position_inc">Baht
             </div>
 
             <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Tel. No. (โทรศัพท์):</label><input type="tel" name="emp_2_tel" style="width: 15%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Type of Business (ลักษณะธุรกิจ):</label><input type="text" name="emp_2_type" style="width: 25%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Cost of Living (ค่าครองชีพ):</label><input type="text" name="emp_2_cost_live" style="width: 10%; margin-right: 5px;">Baht
+                <label style="white-space: nowrap; flex: 0 0 30%;">Tel. No. (โทรศัพท์):</label><input type="tel" name="emp_2_tel">
+                <label style="white-space: nowrap;">Type of Business (ลักษณะธุรกิจ):</label><input type="text" name="emp_2_type">
+                <label style="white-space: nowrap;">Cost of Living (ค่าครองชีพ):</label><input type="text" name="emp_2_cost_live">Baht
             </div>
 
             <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Date of employment (ว.ด.ป. ที่เริ่มทํางาน) : From (จากวันที่)</label><input type="date" name="emp_2_from" style="width: 15%; margin-right: 5px;">
-                <label style="white-space: nowrap;">To (ถึงวันที่)</label><input type="date" name="emp_2_to" style="width: 15%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Other Income (รายได้อื่นๆ):</label><input type="text" name="emp_2_other_inc" style="width: 10%; margin-right: 5px;">Baht
+                <label style="white-space: nowrap; flex: 0 0 30%;">Date of employment (ว.ด.ป. ที่เริ่มทํางาน) : From (จากวันที่)</label><input type="date" name="emp_2_from">
+                <label style="white-space: nowrap;">To (ถึงวันที่)</label><input type="date" name="emp_2_to">
+                <label style="white-space: nowrap;">Other Income (รายได้อื่นๆ):</label><input type="text" name="emp_2_other_inc">Baht
             </div>
 
             <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Position (ตำแหน่ง):</label><input type="text" name="emp_2_title" style="width: 25%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Department (ฝ่าย):</label><input type="text" name="emp_2_dept" style="width: 25%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Reason of Leaving (สาเหตุที่ลาออก):</label><input type="text" name="emp_2_reason" style="width: 15%;">
+                <label style="white-space: nowrap; flex: 0 0 30%;">Position (ตำแหน่ง):</label><input type="text" name="emp_2_title">
+                <label style="white-space: nowrap;">Department (ฝ่าย):</label><input type="text" name="emp_2_dept">
+                <label style="white-space: nowrap;">Reason of Leaving (สาเหตุที่ลาออก):</label><input type="text" name="emp_2_reason">
             </div>
 
             <label style="display: block; font-weight: bold; margin-top: 5px;">Describe Major Duties (รายละเอียดของงาน):</label>
@@ -481,31 +482,31 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
         <div class="employment-block" style="border: 1px solid black; padding: 5px; margin-bottom: 10px;">
             <div style="display: flex; flex-wrap: wrap; align-items: center;">
                 <label style="font-weight: bold; white-space: nowrap; flex: 0 0 30%;">3.COMPANY NAME (ชื่อบริษัท) :</label> 
-                <input type="text" name="emp_3_company" style="width: 40%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Basic Salary (ฐานเงินเดือน):</label><input type="text" name="emp_3_salary" style="width: 10%; margin-right: 5px;">Baht
+                <input type="text" name="emp_3_company">
+                <label style="white-space: nowrap;">Basic Salary (ฐานเงินเดือน):</label><input type="text" name="emp_3_salary">Baht
             </div>
             
             <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Address of company (ที่อยู่บริษัท):</label><input type="text" name="emp_3_address" style="width: 40%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Position (ค่าตำแหน่ง):</label><input type="text" name="emp_3_position_inc" style="width: 10%; margin-right: 5px;">Baht
+                <label style="white-space: nowrap; flex: 0 0 30%;">Address of company (ที่อยู่บริษัท):</label><input type="text" name="emp_3_address">
+                <label style="white-space: nowrap;">Position (ค่าตำแหน่ง):</label><input type="text" name="emp_3_position_inc">Baht
             </div>
 
             <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Tel. No. (โทรศัพท์):</label><input type="tel" name="emp_3_tel" style="width: 15%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Type of Business (ลักษณะธุรกิจ):</label><input type="text" name="emp_3_type" style="width: 25%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Cost of Living (ค่าครองชีพ):</label><input type="text" name="emp_3_cost_live" style="width: 10%; margin-right: 5px;">Baht
+                <label style="white-space: nowrap; flex: 0 0 30%;">Tel. No. (โทรศัพท์):</label><input type="tel" name="emp_3_tel">
+                <label style="white-space: nowrap;">Type of Business (ลักษณะธุรกิจ):</label><input type="text" name="emp_3_type">
+                <label style="white-space: nowrap;">Cost of Living (ค่าครองชีพ):</label><input type="text" name="emp_3_cost_live">Baht
             </div>
 
             <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Date of employment (ว.ด.ป. ที่เริ่มทํางาน) : From (จากวันที่)</label><input type="date" name="emp_3_from" style="width: 15%; margin-right: 5px;">
-                <label style="white-space: nowrap;">To (ถึงวันที่)</label><input type="date" name="emp_3_to" style="width: 15%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Other Income (รายได้อื่นๆ):</label><input type="text" name="emp_3_other_inc" style="width: 10%; margin-right: 5px;">Baht
+                <label style="white-space: nowrap; flex: 0 0 30%;">Date of employment (ว.ด.ป. ที่เริ่มทํางาน) : From (จากวันที่)</label><input type="date" name="emp_3_from">
+                <label style="white-space: nowrap;">To (ถึงวันที่)</label><input type="date" name="emp_3_to">
+                <label style="white-space: nowrap;">Other Income (รายได้อื่นๆ):</label><input type="text" name="emp_3_other_inc">Baht
             </div>
 
             <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Position (ตำแหน่ง):</label><input type="text" name="emp_3_title" style="width: 25%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Department (ฝ่าย):</label><input type="text" name="emp_3_dept" style="width: 25%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Reason of Leaving (สาเหตุที่ลาออก):</label><input type="text" name="emp_3_reason" style="width: 15%;">
+                <label style="white-space: nowrap; flex: 0 0 30%;">Position (ตำแหน่ง):</label><input type="text" name="emp_3_title">
+                <label style="white-space: nowrap;">Department (ฝ่าย):</label><input type="text" name="emp_3_dept">
+                <label style="white-space: nowrap;">Reason of Leaving (สาเหตุที่ลาออก):</label><input type="text" name="emp_3_reason">
             </div>
 
             <label style="display: block; font-weight: bold; margin-top: 5px;">Describe Major Duties (รายละเอียดของงาน):</label>
@@ -517,12 +518,12 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
         <table class="data-table skill-table">
             <thead>
                 <tr>
-                    <th rowspan="2" style="width: 15%;">ความสามารถทางภาษา / Language Proficiency</th>
+                    <th rowspan="2">ความสามารถทางภาษา / Language Proficiency</th>
                     <th colspan="3">Listenning (การฟัง)</th>
                     <th colspan="3">Speaking (การพูด)</th>
                     <th colspan="3">Reading (การอ่าน)</th>
                     <th colspan="3">Writing (การเขียน)</th>
-                    <th rowspan="2" style="width: 15%;">Computer Knowledge</th>
+                    <th rowspan="2">Computer Knowledge</th>
                 </tr>
                 <tr>
                     <th>Fluent</th><th>Good</th><th>Fair</th>
@@ -597,11 +598,11 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
         <table class="data-table">
             <thead>
                 <tr>
-                    <th style="width: 30%;">Training Course (ชื่อหลักสูตร)</th>
-                    <th style="width: 30%;">Institute (สถาบันที่จัด)</th>
-                    <th style="width: 15%;">Duration (ระยะเวลา)</th>
-                    <th style="width: 10%;">Year (ปี)</th>
-                    <th style="width: 15%;">Remark (หมายเหตุ)</th>
+                    <th>Training Course (ชื่อหลักสูตร)</th>
+                    <th>Institute (สถาบันที่จัด)</th>
+                    <th>Duration (ระยะเวลา)</th>
+                    <th>Year (ปี)</th>
+                    <th>Remark (หมายเหตุ)</th>
                 </tr>
             </thead>
             <tbody>
@@ -622,10 +623,10 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
                 </div>
                 <div style="margin-top: 10px;">
                     <div style="display: flex; align-items: center; margin-bottom: 5px;">
-                        <label style="width: 40%;">Car (รถยนต์)</label><input type="checkbox" name="license[]" value="Car"><label style="font-size: 7pt; margin-left: 5px; width: 35%;">ใบอนุญาตขับขี่ driving license</label><input type="radio" name="license_car_status" value="YES"><label>YES</label><input type="radio" name="license_car_status" value="NO"><label>NO</label>
+                        <label>Car (รถยนต์)</label><input type="checkbox" name="license[]" value="Car"><label style="font-size: 7pt; margin-left: 5px;">ใบอนุญาตขับขี่ driving license</label><input type="radio" name="license_car_status" value="YES"><label>YES</label><input type="radio" name="license_car_status" value="NO"><label>NO</label>
                     </div>
                     <div style="display: flex; align-items: center; margin-bottom: 5px;">
-                        <label style="width: 40%;">Motorcycle(รถมอเตอร์ไซค์)</label><input type="checkbox" name="license[]" value="Motorcycle"><label style="font-size: 7pt; margin-left: 5px; width: 35%;">ใบอนุญาตขับขี่ driving license</label><input type="radio" name="license_moto_status" value="YES"><label>YES</label><input type="radio" name="license_moto_status" value="NO"><label>NO</label>
+                        <label>Motorcycle(รถมอเตอร์ไซค์)</label><input type="checkbox" name="license[]" value="Motorcycle"><label style="font-size: 7pt; margin-left: 5px;">ใบอนุญาตขับขี่ driving license</label><input type="radio" name="license_moto_status" value="YES"><label>YES</label><input type="radio" name="license_moto_status" value="NO"><label>NO</label>
                     </div>
                     <label style="display: flex; align-items: center;">Others(อื่นๆ):<input type="text" name="driving_others"></label>
                 </div>
@@ -646,12 +647,12 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
         <table class="data-table">
             <thead>
                 <tr>
-                    <th style="width: 5%;">#</th>
-                    <th style="width: 25%;">Name(ชื่อ)</th>
-                    <th style="width: 15%;">Relationship(ความสัมพันธ์)</th>
-                    <th style="width: 20%;">Occupation(อาชีพ)</th>
-                    <th style="width: 20%;">Company (บริษัท)</th>
-                    <th style="width: 15%;">Tel. No. (โทรศัพท์)</th>
+                    <th>#</th>
+                    <th>Name(ชื่อ)</th>
+                    <th>Relationship(ความสัมพันธ์)</th>
+                    <th>Occupation(อาชีพ)</th>
+                    <th>Company (บริษัท)</th>
+                    <th>Tel. No. (โทรศัพท์)</th>
                 </tr>
             </thead>
             <tbody>
@@ -669,7 +670,7 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
             <div style="text-align: right;">
                 <div style="display: flex; align-items: flex-end;">
                     <label>ลงชื่อผู้สมัคร / Signature:</label>
-                    <input type="text" name="applicant_signature_text" style="width: 250px; margin-left: 10px; border-bottom: 1px dotted black; font-size: 10pt;"> 
+                    <input type="text" name="applicant_signature_text" style="margin-left: 10px; border-bottom: 1px dotted black; font-size: 10pt;"> 
                 </div>
                 <div style="display: flex; align-items: flex-end; margin-top: 10px;">
                     <label>Date (วันที่):</label>
