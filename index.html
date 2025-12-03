@@ -8,44 +8,6 @@
 /* ------------------------------------------------------------------- */
 /* GLOBAL SETUP & LAYOUT */
 /* ------------------------------------------------------------------- */
-body { font-family: 'Tahoma', 'Arial', sans-serif; /* ... โค้ดเดิม ... */ }
-.application-container { width: 90%; max-width: 1200px; /* ... โค้ดเดิม ... */ }
-/* ... CSS ส่วนอื่นๆ ที่คุณเขียนไว้ ... */
-
-/* ------------------------------------------------------------------- */
-/* *** เริ่มแทรกโค้ด MOBILE RESPONSIVE ตรงนี้ *** */
-/* ------------------------------------------------------------------- */
-
-@media screen and (max-width: 768px) {
-    /* 1. CONTAINER หลัก */
-    .application-container {
-        width: 100%; 
-        /* ... โค้ดแก้ไข Responsive ทั้งหมดที่ผมให้ไป ... */
-    }
-    
-    /* ... โค้ด @media screen and (max-width: 768px) ปิดท้ายตรงนี้ ... */
-}
-
-
-/* ------------------------------------------------------------------- */
-/* สิ้นสุดส่วน Mobile Responsive */
-/* ------------------------------------------------------------------- */
-
-/* ------------------------------------------------------------------- */
-/* PRINT STYLES (2-Page Control & Centering Fix) */
-/* ------------------------------------------------------------------- */
-@page { 
-    size: A4; 
-    /* ... โค้ด @page เดิม ... */
-}
-@media print {
-    body { margin: 0; padding: 0; } 
-    /* ... โค้ด @media print เดิม ... */
-}
-</style>
-/* ------------------------------------------------------------------- */
-/* GLOBAL SETUP & LAYOUT */
-/* ------------------------------------------------------------------- */
 body { font-family: 'Tahoma', 'Arial', sans-serif; font-size: 9pt; margin: 0; padding: 0; background-color: #f0f0f0; line-height: 1.3; }
 .application-container { width: 90%; max-width: 1200px; min-height: 29.7cm; margin: 20px auto; padding: 1cm 1.5cm; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); box-sizing: border-box; }
 
@@ -620,5 +582,6 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
     </form>
 </body>
 </html>
+
 
 
