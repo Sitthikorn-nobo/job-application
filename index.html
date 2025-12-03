@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JOB APPLICATION FORM - TG (Mobile UX Optimized)</title>
+    <title>JOB APPLICATION FORM - TG (Ultimate Responsive)</title>
     <style>
 /* ------------------------------------------------------------------- */
-/* GLOBAL SETUP & LAYOUT (Default for Desktop/Print) */
+/* GLOBAL SETUP & LAYOUT (Default: Applies to Desktop/Print) */
 /* ------------------------------------------------------------------- */
 body { font-family: 'Tahoma', 'Arial', sans-serif; font-size: 9pt; margin: 0; padding: 0; background-color: #f0f0f0; line-height: 1.3; }
 .application-container { width: 90%; max-width: 1200px; min-height: 29.7cm; margin: 20px auto; padding: 1cm 1.5cm; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); box-sizing: border-box; }
 
-/* INPUT STYLES (Desktop) */
+/* INPUT STYLES (Desktop/Print) */
 input[type="text"], input[type="date"], input[type="number"], input[type="tel"], input[type="email"] {
     width: 98%; border: none; border-bottom: 1px dotted black; padding: 0; margin: 0;
     background: transparent; font-size: 11pt; font-weight: bold; box-sizing: border-box;
@@ -23,10 +23,13 @@ textarea { width: 100%; border: 1px solid black; box-sizing: border-box; min-hei
 .data-table { width: 100%; border-collapse: collapse; margin-top: 5px; font-size: 9pt; }
 .data-table th, .data-table td { border: 1px solid black; padding: 2px 5px; height: 20px; vertical-align: middle; }
 .data-table th { background-color: #f0f0f0; text-align: center; }
+
+/* Checkbox/Radio styling */
 .checkbox-group label { display: inline-flex; align-items: center; margin-right: 15px; }
 input[type="checkbox"], input[type="radio"] { 
     -webkit-appearance: none; -moz-appearance: none; appearance: none; 
     width: 10px; height: 10px; border: 1px solid black; margin-right: 5px; margin-left: 0; flex-shrink: 0; 
+    border-radius: 50%; /* Make radios circular */
 }
 input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { content: '✓'; font-size: 7pt; line-height: 1; display: block; text-align: center; color: black; }
 
@@ -43,17 +46,16 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
         min-height: auto;
     }
     
-    /* Header & Photo (Stacked Vertically) */
+    /* Header Block */
     .header-table, .header-table tr, .header-table td { display: block; width: 100%; }
     .photo-cell { order: -1; text-align: center; padding: 10px 0; }
     .photo-box { margin: 0 auto 10px; float: none; }
     .company-details { text-align: center; }
     .logo-g { float: none; display: block; margin: 0 auto 5px; }
 
-    h1 { font-size: 14pt; margin: 10px 0; }
     h2.section-title { margin: 10px 0 5px 0; padding: 10px; font-size: 12pt; }
     
-    /* Global Table Conversion to Vertical Blocks */
+    /* Global Table Conversion to Vertical Blocks (Key Fix) */
     .data-table { border: none !important; margin-top: 5px; }
     .data-table thead { display: none; }
     .data-table tr {
@@ -64,29 +66,29 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
     .data-table td {
         display: block;
         width: 100% !important; 
-        padding: 8px 10px; /* เพิ่มพื้นที่ */
+        padding: 8px 10px; 
         border: none !important;
-        border-bottom: 1px solid #ddd !important; /* เส้นแบ่งรายการ */
+        border-bottom: 1px solid #ddd !important; 
         height: auto;
     }
     .data-table tr:last-child td { border-bottom: none !important; }
 
-    /* Input Styling for Mobile (Full Width, Clearer Line) */
+    /* Input & Label Styling for Mobile (Clear UX) */
     .data-table td label {
         display: block; 
-        font-size: 9pt;
+        font-size: 10pt;
         font-weight: normal; 
-        margin-bottom: 5px;
+        margin-bottom: 3px;
     }
     input[type="text"], input[type="date"], input[type="number"], input[type="tel"], input[type="email"] {
         width: 100%; 
         font-size: 11pt;
         font-weight: bold; 
-        border-bottom: 1px solid #666; /* ให้เส้นหนาขึ้นเพื่อให้มองเห็นชัด */
+        border-bottom: 1px solid #666; 
         padding-bottom: 2px;
     }
-
-    /* Fix: Age/Weight/Height Grouping */
+    
+    /* Fix: Age/Weight/Height Grouping (Horizontal mini-grouping) */
     .data-table tr:first-child td:nth-last-child(1) { 
         display: flex;
         flex-wrap: wrap;
@@ -104,7 +106,7 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
         display: inline;
     }
     
-    /* Fix: Military/Marital Status Container Separation */
+    /* Fix: Military Status & Marital Status Separation */
     .data-table td[style*="width: 30%;"], .data-table td[style*="width: 70%;"] {
         width: 100% !important;
         border-right: none !important;
@@ -112,25 +114,26 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
         padding-bottom: 10px !important;
     }
 
-    /* Fix: Family & Education Table Headers (Use bold text) */
+    /* Fix: Family & Education Table Headers (Use bold text for clarity) */
     .family-table tr td:first-child, .education-table tr td:first-child, .data-table tr td:first-child[style*="width: 5%;"] {
         font-weight: bold;
         background-color: #f9f9f9;
         display: block;
     }
     
-    /* Fix: Employment History - Clear Blocks */
+    /* Fix: Employment History - Clear Blocks & Full Width Inputs */
     .employment-block { 
         padding: 10px; 
         margin-bottom: 15px !important; 
         border: 1px solid #ccc !important;
     }
     .employment-block > div { flex-direction: column; align-items: flex-start !important; }
+    .employment-block label { display: block; width: 100% !important; margin: 5px 0 0 0 !important; font-weight: normal !important; }
+    .employment-block input { width: 100% !important; font-weight: bold; }
 
-    /* Fix: Special Skill Table (ภาษา) - Clean List View */
+    /* Fix: Special Skill Table (ภาษา) - Clean List View (Major UX Improvement) */
     .skill-table { border: 1px solid black !important; }
     .skill-table tbody tr { display: block; border-top: 1px solid black; }
-    
     .skill-table td:first-child { 
         font-weight: bold;
         background-color: #f0f0f0;
@@ -138,26 +141,28 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
         width: 100% !important;
         display: block;
     }
-    /* Grouping radio options for better list view */
+    /* Grouping radio options into vertical list structure */
     .skill-table td:nth-child(2), .skill-table td:nth-child(5), 
     .skill-table td:nth-child(8), .skill-table td:nth-child(11) {
-        /* This displays the main category (Fluent) + Radio Button */
         display: flex; 
         justify-content: space-between;
         align-items: center;
         width: 100% !important;
-        padding: 5px 10px;
+        padding: 8px 10px;
         border-bottom: 1px dotted #ccc !important;
+        order: 1; /* Helps organize the blocks vertically */
     }
+    /* Adding labels for radio buttons */
+    .skill-table td:nth-child(2)::before { content: 'Listenning (ฟัง): '; font-weight: normal; }
+    .skill-table td:nth-child(5)::before { content: 'Speaking (พูด): '; font-weight: normal; }
+    .skill-table td:nth-child(8)::before { content: 'Reading (อ่าน): '; font-weight: normal; }
+    .skill-table td:nth-child(11)::before { content: 'Writing (เขียน): '; font-weight: normal; }
+    
     /* Hide the redundant Good/Fair cells on mobile */
     .skill-table td:nth-child(3), .skill-table td:nth-child(4), .skill-table td:nth-child(6), .skill-table td:nth-child(7), 
     .skill-table td:nth-child(9), .skill-table td:nth-child(10), .skill-table td:nth-child(12), .skill-table td:nth-child(13) {
         display: none !important; 
     }
-    .skill-table td:nth-child(2)::before { content: 'Listenning (ฟัง): '; font-weight: normal; }
-    .skill-table td:nth-child(5)::before { content: 'Speaking (พูด): '; font-weight: normal; }
-    .skill-table td:nth-child(8)::before { content: 'Reading (อ่าน): '; font-weight: normal; }
-    .skill-table td:nth-child(11)::before { content: 'Writing (เขียน): '; font-weight: normal; }
     .skill-table td input[type="radio"] { margin-left: 10px; }
 
     /* Fix General Info and Signature Blocks */
@@ -167,6 +172,15 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
     div[style*="text-align: right;"] { text-align: left !important; width: 100%; }
     div[style*="align-items: flex-end;"] { flex-direction: column; align-items: flex-start !important; }
     div[style*="align-items: flex-end;"] input { width: 100% !important; margin: 5px 0 !important; }
+
+    /* Button Styling */
+    .submit-button { 
+        background-color: #007bff;
+        padding: 12px 25px !important;
+        font-size: 14pt !important;
+        border-radius: 8px !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 }
 
 /* ------------------------------------------------------------------- */
@@ -186,7 +200,6 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
         padding: 0.5cm 1cm; 
         width: 21cm; 
     }
-    /* Ensure print inputs look correct */
     input[type="text"], input[type="date"], input[type="number"], input[type="tel"], input[type="email"], .data-table input { 
         border-bottom: 1px solid black !important; 
         font-weight: bold !important; 
@@ -196,8 +209,14 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
     .submit-button, .results-box { display: none; }
     
     /* Restore Table Structure for Printing */
-    .data-table thead, .data-table tr, .data-table td { display: table-row-group !important; display: table-row !important; display: table-cell !important; }
-    .data-table td { border: 1px solid black !important; width: auto !important; padding: 2px 5px !important; }
+    .data-table thead { display: table-header-group !important; }
+    .data-table tr { display: table-row !important; border-bottom: 1px solid black !important; }
+    .data-table td { 
+        display: table-cell !important; 
+        border: 1px solid black !important; 
+        width: auto !important; 
+        padding: 2px 5px !important; 
+    }
     
     /* Restore Skill Table Columns */
     .skill-table td:nth-child(3), .skill-table td:nth-child(4), .skill-table td:nth-child(6), .skill-table td:nth-child(7), 
@@ -217,6 +236,11 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
     div[style*="display: flex;"] { display: flex !important; flex-direction: row !important; }
     .employment-block label { display: inline !important; width: auto !important; margin: 0 !important; }
     .employment-block input { width: auto !important; }
+    .data-table tr:first-child td:nth-last-child(1) label, .data-table tr:first-child td:nth-last-child(1) input {
+        width: auto !important;
+        display: inline !important;
+        margin-right: 5px !important;
+    }
 }
 </style>
 <script>
