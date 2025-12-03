@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JOB APPLICATION FORM - TG (Mobile Optimized)</title>
-    <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOB APPLICATION FORM - TG (Mobile Optimized)</title>
+    <style>
 /* ------------------------------------------------------------------- */
 /* GLOBAL SETUP & LAYOUT */
 /* ------------------------------------------------------------------- */
@@ -15,17 +15,17 @@ body { font-family: 'Tahoma', 'Arial', sans-serif; font-size: 9pt; margin: 0; pa
 /* INPUT & LINE STYLING (Default for Desktop/Print) */
 /* ------------------------------------------------------------------- */
 input[type="text"], input[type="date"], input[type="number"], input[type="tel"], input[type="email"] {
-    width: 98%;
-    border: none;
-    border-bottom: 1px dotted black; 
-    padding: 0;
-    margin: 0;
-    background: transparent;
-    font-size: 11pt; 
-    font-weight: bold; 
-    box-sizing: border-box;
-    display: inline-block;
-    vertical-align: bottom;
+    width: 98%;
+    border: none;
+    border-bottom: 1px dotted black; 
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    font-size: 11pt; 
+    font-weight: bold; 
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: bottom;
 }
 textarea { width: 100%; border: 1px solid black; box-sizing: border-box; min-height: 30px; font-size: 10pt; margin-top: 2px; }
 
@@ -38,17 +38,17 @@ textarea { width: 100%; border: 1px solid black; box-sizing: border-box; min-hei
 .company-details { font-size: 9pt; line-height: 1.2; }
 
 /* Photo Box */
-.photo-cell { width: 150px; text-align: right; position: relative; } 
-.photo-box { 
-    border: 1px solid black; 
-    width: 80px; height: 90px; 
-    margin-left: auto;
-    margin-bottom: 3px;
-    position: relative;
-    overflow: hidden; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.photo-cell { width: 150px; text-align: right; position: relative; } 
+.photo-box { 
+    border: 1px solid black; 
+    width: 80px; height: 90px; 
+    margin-left: auto;
+    margin-bottom: 3px;
+    position: relative;
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .attach-photo-text { font-size: 8pt; position: absolute; z-index: 10; padding: 5px; text-align: center; }
 .photo-box img { max-width: 100%; max-height: 100%; object-fit: contain; position: absolute; z-index: 1; display: none; }
@@ -72,725 +72,860 @@ input[type="checkbox"]:checked:after, input[type="radio"]:checked:after { conten
 /* 📱 MOBILE VIEW STYLES (Responsive Design for small screens) - FINAL OPTIMIZED */
 /* =================================================================== */
 @media screen and (max-width: 768px) {
-    .application-container {
-        width: 100%; 
-        margin: 0;
-        padding: 10px;
-        box-shadow: none;
-        min-height: auto;
-    }
-    
-    /* Header Block */
-    .header-table { margin-bottom: 10px; }
-    .header-table tr, .header-table td { display: block; width: 100%; }
-    .photo-cell { width: 100%; text-align: center; order: -1; padding: 5px 0; }
-    .photo-box { margin: 5px auto 10px; float: none; }
-    .company-details { text-align: center; }
-    .logo-g { float: none; display: block; margin: 0 auto 5px; }
-    h2.section-title { margin: 10px 0 5px 0; padding: 8px 10px; font-size: 12pt; }
-    .notes-box { padding: 8px; }
+    .application-container {
+        width: 100%; 
+        margin: 0;
+        padding: 10px;
+        box-shadow: none;
+        min-height: auto;
+    }
+    
+    /* Header Block */
+    .header-table { margin-bottom: 10px; }
+    .header-table tr, .header-table td { display: block; width: 100%; }
+    .photo-cell { width: 100%; text-align: center; order: -1; padding: 5px 0; }
+    .photo-box { margin: 5px auto 10px; float: none; }
+    .company-details { text-align: center; }
+    .logo-g { float: none; display: block; margin: 0 auto 5px; }
+    h2.section-title { margin: 10px 0 5px 0; padding: 8px 10px; font-size: 12pt; }
+    .notes-box { padding: 8px; }
 
-    /* General Table Conversion to Vertical Blocks (All Tables) */
-    .data-table { border: none !important; margin-top: 5px; }
-    .data-table thead { display: none; }
-    .data-table tr {
-        display: block;
-        width: 100% !important;
-        border: none !important;
-    }
-    .data-table td {
-        display: block;
-        width: 100% !important; 
-        padding: 8px 0; /* เพิ่ม padding แนวตั้ง */
-        border: none !important;
-        border-bottom: 1px dotted #ccc !important; 
-        height: auto;
-    }
-    .data-table tr:last-child td {
-        border-bottom: none !important;
-    }
+    /* General Table Conversion to Vertical Blocks (All Tables) */
+    .data-table { border: none !important; margin-top: 5px; }
+    .data-table thead { display: none; }
+    .data-table tr {
+        display: block;
+        width: 100% !important;
+        border: none !important;
+    }
+    .data-table td {
+        display: block;
+        width: 100% !important; 
+        padding: 8px 0; /* เพิ่ม padding แนวตั้ง */
+        border: none !important;
+        border-bottom: 1px dotted #ccc !important; 
+        height: auto;
+    }
+    .data-table tr:last-child td {
+        border-bottom: none !important;
+    }
 
-    /* Input & Label Stacking (General) */
-    .data-table td label {
-        display: block; 
-        font-size: 10pt;
-        font-weight: normal; 
-        margin-bottom: 3px;
-    }
-    input[type="text"], input[type="date"], input[type="number"], input[type="tel"], input[type="email"] {
-        width: 100%; /* Input เต็มบรรทัด */
-        font-size: 11pt;
-        font-weight: bold; 
-        border-bottom: 1px solid #666; /* ให้เส้นหนาขึ้น */
-    }
-    
-    /* Fix: ตาราง 3 คอลัมน์แรก (Date, Salary, Age/Weight/Height) */
-    .data-table tr:first-child td, .data-table tr:nth-child(2) td {
-        width: 100% !important;
-        border-bottom: 1px dotted #ccc !important;
-    }
-    .data-table tr:first-child td:nth-last-child(1) { /* Age/Weight/Height Group */
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    .data-table tr:first-child td:nth-last-child(1) label {
-        width: 30%; /* แบ่งเป็น 3 ส่วน */
-        display: flex;
-        align-items: center;
-        font-weight: normal;
-        margin-right: 5px;
-    }
-    .data-table tr:first-child td:nth-last-child(1) input {
-        width: 50%; 
-        display: inline;
-    }
+    /* Input & Label Stacking (General) */
+    .data-table td label {
+        display: block !important; 
+        font-size: 10pt;
+        font-weight: normal !important; 
+        margin-bottom: 3px !important;
+    }
+    input[type="text"], input[type="date"], input[type="number"], input[type="tel"], input[type="email"] {
+        width: 100% !important; /* Input เต็มบรรทัด */
+        font-size: 11pt;
+        font-weight: bold; 
+        border-bottom: 1px solid #666 !important; /* ให้เส้นหนาขึ้น */
+    }
+    textarea {
+        width: 100% !important;
+        min-height: 50px !important;
+        padding: 5px !important;
+    }
+    
+    /* Fix: ตาราง 3 คอลัมน์แรก (Date, Salary, Age/Weight/Height) */
+    .data-table tr:first-child td, .data-table tr:nth-child(2) td {
+        width: 100% !important;
+        border-bottom: 1px dotted #ccc !important;
+    }
+    .data-table tr:first-child td:nth-last-child(1) { /* Age/Weight/Height Group */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+    .data-table tr:first-child td:nth-last-child(1) label {
+        width: 30% !important; /* แบ่งเป็น 3 ส่วน */
+        display: flex !important;
+        align-items: center;
+        font-weight: normal !important;
+        margin-right: 5px;
+        margin-bottom: 0 !important;
+    }
+    .data-table tr:first-child td:nth-last-child(1) input {
+        width: 50% !important; 
+        display: inline !important;
+    }
 
-    /* Fix: Military Status & Marital Status */
-    .data-table td[style*="width: 30%;"], .data-table td[style*="width: 70%;"] {
-        width: 100% !important;
-        border-right: none !important;
-        border-bottom: 1px solid black !important; /* แยกกล่อง Military/Marital */
-        padding-bottom: 10px !important;
-    }
-    .data-table td[style*="vertical-align: top;"] table, .data-table td[style*="vertical-align: top;"] table tr, .data-table td[style*="vertical-align: top;"] table td {
-        display: block; 
-        width: 100% !important;
-    }
-    .data-table td[style*="vertical-align: top;"] table td {
-        padding: 2px 0 !important;
-    }
-    /* Fix: Spouse details flex row */
-    td[colspan="4"] > div { flex-direction: column; }
-    td[colspan="4"] > div div { width: 100% !important; margin: 5px 0; }
-    
-    /* Fix: Family, Education, References (ตารางหลายคอลัมน์) */
-    .family-table, .education-table, .data-table:not(.skill-table) {
-        border: 1px solid black !important; 
-        margin-top: 5px;
-    }
-    .family-table tr, .education-table tr, .data-table tr {
-        border-bottom: 1px solid black;
-    }
-    .family-table td, .education-table td, .data-table td {
-        border: none;
-        border-bottom: 1px dotted #ccc !important;
-        width: 100% !important;
-        padding: 5px 10px;
-        height: auto;
-    }
-    .family-table tr td:first-child, .education-table tr td:first-child { 
-        font-weight: bold;
-        background-color: #f9f9f9;
-    }
+    /* Fix: Military Status & Marital Status */
+    .data-table td[style*="width: 30%;"], .data-table td[style*="width: 70%;"] {
+        width: 100% !important;
+        border-right: none !important;
+        border-bottom: 1px solid black !important; /* แยกกล่อง Military/Marital */
+        padding-bottom: 10px !important;
+        padding-top: 10px !important;
+    }
+    /* Military Status box adjustments */
+    .data-table td[style*="width: 30%;"] .checkbox-group > div {
+        display: block !important;
+        margin-bottom: 8px !important;
+    }
+    .data-table td[style*="width: 30%;"] .checkbox-group > div input[type="text"] {
+        width: 70% !important;
+        display: inline-block !important;
+    }
+    .data-table td[style*="width: 30%;"] .checkbox-group > div label {
+        display: inline !important;
+        font-size: 9pt !important;
+        margin-bottom: 0 !important;
+        font-weight: normal !important;
+    }
 
-    /* Fix: Employment History Layout */
-    .employment-block { padding: 10px; margin-bottom: 15px !important; }
-    .employment-block > div { flex-direction: column; align-items: flex-start !important; }
-    .employment-block label { display: block; width: 100% !important; margin: 5px 0 0 0 !important; font-weight: normal !important; }
-    .employment-block label:first-child { font-weight: bold !important; }
-    .employment-block input { width: 100% !important; font-weight: normal; }
+    /* Marital Status (ตารางย่อย) - ทำให้ Radio options แสดงผลในแนวตั้ง */
+    .data-table td[style*="vertical-align: top;"] table, .data-table td[style*="vertical-align: top;"] table tr, .data-table td[style*="vertical-align: top;"] table td {
+        display: block !important; 
+        width: 100% !important;
+        border: none !important;
+    }
+    .data-table td[style*="vertical-align: top;"] table td {
+        padding: 5px 0 !important;
+    }
+    /* Fix: Spouse details flex row */
+    td[colspan="4"] > div { 
+        flex-direction: column !important; 
+        margin-top: 5px !important; 
+        flex-wrap: wrap;
+    }
+    td[colspan="4"] > div div { 
+        width: 100% !important; 
+        margin: 5px 0; 
+    }
+    td[colspan="4"] > div div label { 
+        display: block !important;
+    }
+    
+    /* Fix: Family, Education, References (ตารางหลายคอลัมน์) */
+    .family-table, .education-table, .data-table:not(.skill-table) {
+        border: 1px solid black !important; 
+        margin-top: 5px;
+    }
+    .data-table tbody tr {
+        border-bottom: 1px solid black;
+        margin-bottom: 10px;
+    }
+    .family-table td, .education-table td, .data-table td {
+        border: none;
+        border-bottom: 1px dotted #ccc !important;
+        width: 100% !important;
+        padding: 5px 10px;
+        height: auto;
+    }
+    .family-table tr td:first-child, .education-table tr td:first-child { 
+        font-weight: bold !important;
+        background-color: #f9f9f9;
+    }
+    
+    /* Add Label using ::before for Tables */
+    .data-table td:not(:first-child)::before {
+        display: block;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 5px;
+        font-size: 10pt;
+        content: attr(data-label); /* ใช้ data-label ที่เพิ่มเข้าไปใน HTML เพื่อระบุ Label */
+    }
 
-    /* Fix: Skill Table (ภาษา) - จัดกลุ่ม Radio Button เป็นรายการแนวตั้ง */
-    .skill-table { border: 1px solid black !important; }
-    .skill-table tbody tr { display: block; border-top: 1px solid black; }
-    .skill-table td {
-        display: block;
-        width: 100% !important;
-        padding: 5px 10px;
-        border-bottom: 1px dotted #ccc !important;
-    }
-    .skill-table td:first-child { 
-        font-weight: bold;
-        background-color: #f0f0f0;
-        border-bottom: 1px solid black !important;
-        width: 100% !important;
-    }
-    /* Grouping radio options into vertical list */
-    .skill-table td:nth-child(2), .skill-table td:nth-child(3), .skill-table td:nth-child(4),
-    .skill-table td:nth-child(5), .skill-table td:nth-child(6), .skill-table td:nth-child(7),
-    .skill-table td:nth-child(8), .skill-table td:nth-child(9), .skill-table td:nth-child(10),
-    .skill-table td:nth-child(11), .skill-table td:nth-child(12), .skill-table td:nth-child(13) {
-        display: flex; /* แสดง Fluent, Good, Fair ในบรรทัดเดียว */
-        justify-content: space-between;
-        align-items: center;
-        border: none !important;
-        border-bottom: 1px dotted #eee !important;
-        width: 100% !important;
-    }
-    .skill-table td:nth-child(2)::before { content: 'Listenning (Fluent/Good/Fair)'; font-weight: bold; margin-right: 10px; }
-    .skill-table td:nth-child(5)::before { content: 'Speaking (Fluent/Good/Fair)'; font-weight: bold; margin-right: 10px; }
-    .skill-table td:nth-child(8)::before { content: 'Reading (Fluent/Good/Fair)'; font-weight: bold; margin-right: 10px; }
-    .skill-table td:nth-child(11)::before { content: 'Writing (Fluent/Good/Fair)'; font-weight: bold; margin-right: 10px; }
-    
-    .skill-table td:nth-child(2), .skill-table td:nth-child(5), .skill-table td:nth-child(8), .skill-table td:nth-child(11) {
-        border-bottom: 1px solid #ccc !important;
-        order: 1; /* จัดเรียงใหม่ */
-    }
-    .skill-table td:nth-child(3), .skill-table td:nth-child(4), .skill-table td:nth-child(6), .skill-table td:nth-child(7), 
-    .skill-table td:nth-child(9), .skill-table td:nth-child(10), .skill-table td:nth-child(12), .skill-table td:nth-child(13) {
-        display: none !important; /* ซ่อนคอลัมน์ Good และ Fair ที่แยกออกมา */
-    }
-    .skill-table td:nth-last-child(1) { /* Computer Knowledge */
-        border: none !important;
-        display: block; 
-    }
-    .skill-table td input[type="radio"] { margin-left: 10px; }
+    /* Fix: Employment History Layout */
+    .employment-block { 
+        padding: 10px; 
+        margin-bottom: 15px !important; 
+        display: block; 
+    }
+    .employment-block > div { 
+        display: block !important; 
+        margin-bottom: 10px;
+        border-bottom: 1px dotted #ccc;
+        padding-bottom: 8px;
+    }
+    .employment-block label { 
+        display: block; 
+        width: 100% !important; 
+        margin: 5px 0 0 0 !important; 
+        font-weight: normal !important; 
+        white-space: normal !important; 
+    }
+    .employment-block label:first-child { 
+        font-weight: bold !important; 
+    }
+    .employment-block input { 
+        width: 100% !important; 
+        font-weight: bold !important;
+        border-bottom: 1px solid #666 !important; 
+        margin-top: 2px !important;
+    }
+    .employment-block textarea {
+        min-height: 50px;
+    }
+
+    /* Fix: Skill Table (ภาษา) - จัดกลุ่ม Radio Button เป็นรายการแนวตั้ง */
+    .skill-table { border: 1px solid black !important; }
+    .skill-table tbody tr { display: block; border-top: 1px solid black; }
+    .skill-table td {
+        display: block;
+        width: 100% !important;
+        padding: 5px 10px;
+        border-bottom: 1px dotted #ccc !important;
+    }
+    .skill-table td:first-child { 
+        font-weight: bold;
+        background-color: #f0f0f0;
+        border-bottom: 1px solid black !important;
+        width: 100% !important;
+    }
+    /* Grouping radio options into vertical list */
+    .skill-table td:nth-child(2), .skill-table td:nth-child(5), .skill-table td:nth-child(8), .skill-table td:nth-child(11) {
+        display: flex; 
+        justify-content: flex-start;
+        align-items: center; 
+        border-bottom: 1px solid #ccc !important;
+        order: 1;
+    }
+    .skill-table td:nth-child(2) label, .skill-table td:nth-child(5) label, .skill-table td:nth-child(8) label, .skill-table td:nth-child(11) label {
+        margin-right: 15px;
+        display: inline-flex !important;
+        align-items: center;
+        font-weight: normal !important;
+    }
+    .skill-table td:nth-child(2)::before { content: 'การฟัง (Fluent/Good/Fair)'; font-weight: bold; margin-right: 10px; }
+    .skill-table td:nth-child(5)::before { content: 'การพูด (Fluent/Good/Fair)'; font-weight: bold; margin-right: 10px; }
+    .skill-table td:nth-child(8)::before { content: 'การอ่าน (Fluent/Good/Fair)'; font-weight: bold; margin-right: 10px; }
+    .skill-table td:nth-child(11)::before { content: 'การเขียน (Fluent/Good/Fair)'; font-weight: bold; margin-right: 10px; }
+    
+    .skill-table td:nth-child(3), .skill-table td:nth-child(4), .skill-table td:nth-child(6), .skill-table td:nth-child(7), 
+    .skill-table td:nth-child(9), .skill-table td:nth-child(10), .skill-table td:nth-child(12), .skill-table td:nth-child(13) {
+        display: none !important; /* ซ่อนคอลัมน์ Good และ Fair ที่แยกออกมา */
+    }
+    /* Computer Knowledge: จัดให้ checkbox เรียงลงมาและมีพื้นที่ */
+    .skill-table td:nth-last-child(1) {
+        border: none !important;
+        display: block; 
+        padding: 10px 10px !important;
+    }
+    .skill-table td:nth-last-child(1) .checkbox-group {
+        display: block !important;
+        margin-bottom: 8px;
+        align-items: flex-start !important;
+    }
+    .skill-table td:nth-last-child(1) input[type="text"] {
+        width: 60% !important;
+    }
+    .skill-table td input[type="radio"] { margin-left: 10px; }
 
 
-    /* Fix General Information Layout */
-    div[style*="display: flex;"] { flex-direction: column; }
-    div[style*="margin-left: 10px;"], div[style*="margin-left: 20px;"] { margin-left: 0 !important; margin-top: 10px; }
-    
-    /* Fix Signature block */
-    div[style*="justify-content: flex-end;"] { justify-content: flex-start !important; }
-    div[style*="text-align: right;"] { text-align: left !important; width: 100%; }
-    div[style*="align-items: flex-end;"] { flex-direction: column; align-items: flex-start !important; }
-    div[style*="align-items: flex-end;"] input { width: 100% !important; margin: 5px 0 !important; }
+    /* Fix General Information Layout */
+    div[style*="display: flex;"] { flex-direction: column !important; }
+    div[style*="margin-left: 10px;"], div[style*="margin-left: 20px;"] { margin-left: 0 !important; margin-top: 10px; }
+    div[style*="display: flex;"] label { width: 100% !important; margin: 5px 0 !important; }
+    div[style*="display: flex;"] input[type="text"], div[style*="display: flex;"] input[type="tel"] { width: 100% !important; margin-top: 2px !important; }
+    /* Fix Driving License Checkboxes */
+    div[style*="display: flex;"] .checkbox-group { display: block !important; }
+    div[style*="display: flex;"] .checkbox-group label { display: inline-flex !important; width: auto !important; margin-right: 15px !important; }
+    div[style*="display: flex;"] label[style*="width: 40%"] { width: 100% !important; display: block !important; }
+
+
+    /* Fix Signature block */
+    div[style*="justify-content: flex-end;"] { justify-content: flex-start !important; }
+    div[style*="text-align: right;"] { text-align: left !important; width: 100%; }
+    div[style*="align-items: flex-end;"] { flex-direction: column !important; align-items: flex-start !important; }
+    div[style*="align-items: flex-end;"] input { width: 100% !important; margin: 5px 0 !important; }
 
 }
 /* ------------------------------------------------------------------- */
 /* 🖨️ PRINT STYLES (A4 Layout for Printing) - KEEP ORIGINAL */
 /* ------------------------------------------------------------------- */
-@page { 
-    size: A4; 
-    margin: 1cm;
-    margin-left: auto;
-    margin-right: auto;
+@page { 
+    size: A4; 
+    margin: 1cm;
+    margin-left: auto;
+    margin-right: auto;
 }
 @media print {
-    body { margin: 0; padding: 0; } 
-    .application-container { 
-        box-shadow: none; 
-        margin: 0 auto; 
-        padding: 0.5cm 1cm; 
-        width: 21cm; 
-    }
-    input[type="text"], input[type="date"], input[type="number"], input[type="tel"], input[type="email"], .data-table input { 
-        border-bottom: 1px solid black !important; 
-        font-weight: bold !important; 
-    }
-    
-    .page-break-after-p1 { page-break-after: always; }
-    
-    .submit-button, .results-box { display: none; }
-    
-    /* คืนค่าตารางทั้งหมดกลับไปแสดงผลแบบปกติเมื่อพิมพ์ */
-    .data-table thead { display: table-header-group !important; }
-    .data-table tr { display: table-row !important; border-bottom: 1px solid black !important; }
-    .data-table td { display: table-cell !important; border: 1px solid black !important; width: auto !important; padding: 2px 5px !important; }
-    .skill-table td { display: table-cell !important; justify-content: center !important; flex-direction: row !important; }
-    .skill-table td:nth-child(1) { background-color: #f0f0f0 !important; } 
-    /* คืนค่าคอลัมน์ Good และ Fair ที่ซ่อนไป */
-    .skill-table td:nth-child(3), .skill-table td:nth-child(4), .skill-table td:nth-child(6), .skill-table td:nth-child(7), 
-    .skill-table td:nth-child(9), .skill-table td:nth-child(10), .skill-table td:nth-child(12), .skill-table td:nth-child(13) {
-        display: table-cell !important;
-    }
-    .skill-table td:nth-child(2)::before, .skill-table td:nth-child(5)::before, 
-    .skill-table td:nth-child(8)::before, .skill-table td:nth-child(11)::before {
-        content: none !important;
-    }
-    .skill-table td:nth-child(2), .skill-table td:nth-child(5), .skill-table td:nth-child(8), .skill-table td:nth-child(11) {
-        border-bottom: 1px solid black !important;
-        order: 0; 
-    }
+    body { margin: 0; padding: 0; } 
+    .application-container { 
+        box-shadow: none; 
+        margin: 0 auto; 
+        padding: 0.5cm 1cm; 
+        width: 21cm; 
+    }
+    input[type="text"], input[type="date"], input[type="number"], input[type="tel"], input[type="email"], .data-table input { 
+        border-bottom: 1px solid black !important; 
+        font-weight: bold !important; 
+    }
+    
+    .page-break-after-p1 { page-break-after: always; }
+    
+    .submit-button, .results-box { display: none; }
+    
+    /* คืนค่าตารางทั้งหมดกลับไปแสดงผลแบบปกติเมื่อพิมพ์ */
+    .data-table thead { display: table-header-group !important; }
+    .data-table tr { display: table-row !important; border-bottom: 1px solid black !important; }
+    .data-table td { display: table-cell !important; border: 1px solid black !important; width: auto !important; padding: 2px 5px !important; }
+    .data-table td::before { content: none !important; } /* ปิด Label ที่สร้างขึ้นมา */
+    .skill-table td { display: table-cell !important; justify-content: center !important; flex-direction: row !important; }
+    .skill-table td:nth-child(1) { background-color: #f0f0f0 !important; } 
+    /* คืนค่าคอลัมน์ Good และ Fair ที่ซ่อนไป */
+    .skill-table td:nth-child(3), .skill-table td:nth-child(4), .skill-table td:nth-child(6), .skill-table td:nth-child(7), 
+    .skill-table td:nth-child(9), .skill-table td:nth-child(10), .skill-table td:nth-child(12), .skill-table td:nth-child(13) {
+        display: table-cell !important;
+    }
+    .skill-table td:nth-child(2)::before, .skill-table td:nth-child(5)::before, 
+    .skill-table td:nth-child(8)::before, .skill-table td:nth-child(11)::before {
+        content: none !important;
+    }
+    .skill-table td:nth-child(2), .skill-table td:nth-child(5), .skill-table td:nth-child(8), .skill-table td:nth-child(11) {
+        border-bottom: 1px solid black !important;
+        order: 0; 
+    }
 
-    /* คืนค่า Flex/Block เดิม */
-    div[style*="display: flex;"] { display: flex !important; flex-direction: row !important; }
-    .employment-block label { display: inline !important; width: auto !important; margin: 0 !important; }
-    .employment-block input { width: auto !important; }
-    .data-table tr:first-child td:nth-last-child(1) label, .data-table tr:first-child td:nth-last-child(1) input {
-        width: auto !important;
-        display: inline !important;
-        margin-right: 5px !important;
-    }
+    /* คืนค่า Flex/Block เดิม */
+    div[style*="display: flex;"] { display: flex !important; flex-direction: row !important; }
+    .employment-block label { display: inline !important; width: auto !important; margin: 0 !important; }
+    .employment-block input { width: auto !important; }
+    .data-table tr:first-child td:nth-last-child(1) label, .data-table tr:first-child td:nth-last-child(1) input {
+        width: auto !important;
+        display: inline !important;
+        margin-right: 5px !important;
+    }
 }
 </style>
 <script>
-    // JavaScript สำหรับแสดงรูปภาพที่ผู้ใช้อัปโหลดในกรอบ (Image Fix)
-    function previewImage(event) {
-        var photoBox = event.target.closest('.photo-box');
-        var output = photoBox.querySelector('#photo-preview');
-        var text = photoBox.querySelector('.attach-photo-text');
+    // JavaScript สำหรับแสดงรูปภาพที่ผู้ใช้อัปโหลดในกรอบ (Image Fix)
+    function previewImage(event) {
+        var photoBox = event.target.closest('.photo-box');
+        var output = photoBox.querySelector('#photo-preview');
+        var text = photoBox.querySelector('.attach-photo-text');
 
-        if (event.target.files && event.target.files[0]) {
-            output.src = URL.createObjectURL(event.target.files[0]);
-            output.onload = function() {
-                URL.revokeObjectURL(output.src)
-            }
-            if (text) text.style.display = 'none'; // ซ่อนข้อความเมื่อมีรูป
-            output.style.display = 'block'; // แสดงรูปภาพ
-        } else {
-            output.src = '';
-            if (text) text.style.display = 'block'; // แสดงข้อความเมื่อไม่มีรูป
-            output.style.display = 'none'; // ซ่อนรูปภาพ
-        }
-    }
-    // ซ่อนรูปภาพเริ่มต้นเมื่อ DOM โหลด
-    document.addEventListener('DOMContentLoaded', function() {
-        var output = document.getElementById('photo-preview');
-        if (output) output.style.display = 'none';
-    });
+        if (event.target.files && event.target.files[0]) {
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.onload = function() {
+                URL.revokeObjectURL(output.src)
+            }
+            if (text) text.style.display = 'none'; // ซ่อนข้อความเมื่อมีรูป
+            output.style.display = 'block'; // แสดงรูปภาพ
+        } else {
+            output.src = '';
+            if (text) text.style.display = 'block'; // แสดงข้อความเมื่อไม่มีรูป
+            output.style.display = 'none'; // ซ่อนรูปภาพ
+        }
+    }
+    // ซ่อนรูปภาพเริ่มต้นเมื่อ DOM โหลด
+    document.addEventListener('DOMContentLoaded', function() {
+        var output = document.getElementById('photo-preview');
+        if (output) output.style.display = 'none';
+        
+        // Auto-generate data-label for responsive table cells (Family, Education, References, Training)
+        var tables = document.querySelectorAll('.data-table');
+        tables.forEach(function(table) {
+            var headers = [];
+            table.querySelectorAll('thead th').forEach(function(th) {
+                // Use the main content of the header, ignoring sub-headers like Fluent/Good/Fair
+                if (th.getAttribute('colspan') > 1) {
+                    // For colspan headers, grab the first text or use a generic label
+                    headers.push(th.innerText.split('/')[0].trim() || 'Header');
+                } else {
+                    headers.push(th.innerText.trim());
+                }
+            });
+
+            table.querySelectorAll('tbody tr').forEach(function(row) {
+                row.querySelectorAll('td').forEach(function(cell, index) {
+                    // Skip first cell for tables like Family/Education/References where it's the category
+                    if (cell.parentNode.closest('.data-table') !== document.querySelector('.data-table:nth-of-type(1)') && index > 0 && index <= headers.length) {
+                        var headerIndex = index;
+                        // Adjust index for tables with rowspans or complex headers (like the skill table)
+                        if (table.classList.contains('skill-table')) {
+                            // Skill table headers are flat for 14 columns
+                            if (index < 2) headerIndex = 0; // Language/Header
+                            else if (index <= 4) headerIndex = 1; // Listenning
+                            else if (index <= 7) headerIndex = 4; // Speaking
+                            else if (index <= 10) headerIndex = 7; // Reading
+                            else if (index <= 13) headerIndex = 10; // Writing
+                            else headerIndex = 13; // Computer
+                        } else if (table.classList.contains('family-table') || table.classList.contains('education-table')) {
+                            // For tables where the first column is a category/label
+                            headerIndex = index + 1;
+                        }
+                        
+                        // Fallback: Use the header text from the first row of headers
+                        var headerElement = table.querySelector('thead tr:first-child th:nth-child(' + (index + 1) + ')');
+                        var labelText = headerElement ? headerElement.innerText.trim() : headers[index];
+
+                        // Skip setting label if the cell is part of a complex structure (handled manually in CSS)
+                        if (!cell.querySelector('input[type="radio"]') && !cell.querySelector('input[type="checkbox"]')) {
+                            cell.setAttribute('data-label', labelText);
+                        }
+                    }
+                });
+            });
+        });
+    });
 </script>
 </head>
 <body>
-    
-    <form class="application-container" onsubmit="return false;">
-        <div class="page-break-after-p1">
-            <table class="header-table">
-                <tr>
-                    <td style="width: 75%;">
-                        <div style="display: flex; align-items: flex-start;">
-                            <div class="logo-g">G</div>
-                            <div class="company-details">
-                                <div style="font-size: 10pt; font-weight: bold;">TOYODA GOSEI (THAILAND) CO.,LTD.</div>
-                                <div>บริษัท โตโยด้าโกเช (ประเทศไทย) จำกัด</div>
-                                <div>700/489 หมู่4 นิคมอุตสาหกรรมอมตะซิตี้ ก.บางนา-ตราด กม.57 ต.บ้านเก่า อ.พานทอง จ.ชลบุรี 20160</div>
-                                <div>โทรศัพท์ (038) 454089-94</div>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="photo-cell">
-                        <div class="photo-box" style="float: right;">
-                            <div class="attach-photo-text">Attach photo 1 นิ้ว (ติดรูปถ่าย)</div>
-                            <img id="photo-preview" src="" alt="Photo Preview">
-                            <input type="file" name="applicant_photo" accept="image/*" onchange="previewImage(event)">
-                        </div>
-                    </td>
-                </tr>
-            </table>
-            <h1>JOB APPLICATION FORM</h1>
-            <div class="notes-box">
-                ข้อปฏิบัติในการสมัครงาน:
-                <ol style="margin: 0; padding-left: 20px;">
-                    <li>กรุณากรอกเอกสารใบสมัครตามความเป็นจริง โดยให้ใส่ข้อมูลตามใบสมัครงานเท่าที่จำเป็น</li>
-                    <li>เพื่อประโยชน์ในการทำงานร่วมกัน ข้อมูลนี้จะถูกเก็บเป็นความลับตามพรบ.คุ้มครองข้อมูลส่วนบุคคล</li>
-                    <li>ข้อมูลนี้ใช้เพื่อประกอบการพิจารณาคัดเลือกเท่านั้น สำหรับข้อมูลของบุคคลที่ไม่ได้รับการจ้างงานเป็นพนักงาน บริษัทฯจะเก็บไว้ระยะ 6 เดือนและจะทำลายทิ้งทันที</li>
-                </ol>
-            </div>
+    
+    <form class="application-container" onsubmit="return false;">
+        <div class="page-break-after-p1">
+            <table class="header-table">
+                <tr>
+                    <td style="width: 75%;">
+                        <div style="display: flex; align-items: flex-start;">
+                            <div class="logo-g">G</div>
+                            <div class="company-details">
+                                <div style="font-size: 10pt; font-weight: bold;">TOYODA GOSEI (THAILAND) CO.,LTD.</div>
+                                <div>บริษัท โตโยด้าโกเช (ประเทศไทย) จำกัด</div>
+                                <div>700/489 หมู่4 นิคมอุตสาหกรรมอมตะซิตี้ ก.บางนา-ตราด กม.57 ต.บ้านเก่า อ.พานทอง จ.ชลบุรี 20160</div>
+                                <div>โทรศัพท์ (038) 454089-94</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="photo-cell">
+                        <div class="photo-box" style="float: right;">
+                            <div class="attach-photo-text">Attach photo 1 นิ้ว (ติดรูปถ่าย)</div>
+                            <img id="photo-preview" src="" alt="Photo Preview">
+                            <input type="file" name="applicant_photo" accept="image/*" onchange="previewImage(event)">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <h1>JOB APPLICATION FORM</h1>
+            <div class="notes-box">
+                ข้อปฏิบัติในการสมัครงาน:
+                <ol style="margin: 0; padding-left: 20px;">
+                    <li>กรุณากรอกเอกสารใบสมัครตามความเป็นจริง โดยให้ใส่ข้อมูลตามใบสมัครงานเท่าที่จำเป็น</li>
+                    <li>เพื่อประโยชน์ในการทำงานร่วมกัน ข้อมูลนี้จะถูกเก็บเป็นความลับตามพรบ.คุ้มครองข้อมูลส่วนบุคคล</li>
+                    <li>ข้อมูลนี้ใช้เพื่อประกอบการพิจารณาคัดเลือกเท่านั้น สำหรับข้อมูลของบุคคลที่ไม่ได้รับการจ้างงานเป็นพนักงาน บริษัทฯจะเก็บไว้ระยะ 6 เดือนและจะทำลายทิ้งทันที</li>
+                </ol>
+            </div>
 
-            <table class="data-table" style="border: 1px solid black; margin-top: 0;">
-                <tr style="height: 25px; border-bottom: none;">
-                    <td style="width: 25%; border: none; padding-right: 0;"><label>Date (วันที่สมัคร)</label><input type="date" name="date_applied" style="width: 50%;"></td>
-                    <td style="width: 35%; border: none; padding-left: 5px;"><label>Expected Salaly (เงินเดือนที่คาดหวัง)</label><input type="text" name="expected_salary" style="width: 50%;"></td>
-                    <td style="width: 40%; border: none; border-left: 1px solid black; padding-left: 5px;">
-                        <label style="margin-right: 5px;">Age</label><input type="number" name="age" style="width: 15%; margin-right: 5px;">
-                        <label style="margin-right: 5px;">Weight</label><input type="number" name="weight" style="width: 15%; margin-right: 5px;">
-                        <label style="margin-right: 5px;">Height</label><input type="number" name="height" style="width: 15%;">
-                    </td>
-                </tr>
-                <tr style="height: 25px; border-top: none;">
-                    <td colspan="2" style="border: none;"><label>Position Applied For (ตำแหน่งที่สมัคร)</label><input type="text" name="position_applied_for" style="width: 70%;"></td>
-                    <td colspan="1" style="border: none;"><label>Start Date (วันที่สามารถเริ่มงานได้)</label><input type="date" name="start_date" style="width: 50%;"></td>
-                </tr>
-            </table>
+            <table class="data-table" style="border: 1px solid black; margin-top: 0;">
+                <tr style="height: 25px; border-bottom: none;">
+                    <td style="width: 25%; border: none; padding-right: 0;"><label>Date (วันที่สมัคร)</label><input type="date" name="date_applied" style="width: 50%;"></td>
+                    <td style="width: 35%; border: none; padding-left: 5px;"><label>Expected Salaly (เงินเดือนที่คาดหวัง)</label><input type="text" name="expected_salary" style="width: 50%;"></td>
+                    <td style="width: 40%; border: none; border-left: 1px solid black; padding-left: 5px;">
+                        <label style="margin-right: 5px;">Age</label><input type="number" name="age" style="width: 15%; margin-right: 5px;">
+                        <label style="margin-right: 5px;">Weight</label><input type="number" name="weight" style="width: 15%; margin-right: 5px;">
+                        <label style="margin-right: 5px;">Height</label><input type="number" name="height" style="width: 15%;">
+                    </td>
+                </tr>
+                <tr style="height: 25px; border-top: none;">
+                    <td colspan="2" style="border: none;"><label>Position Applied For (ตำแหน่งที่สมัคร)</label><input type="text" name="position_applied_for" style="width: 70%;"></td>
+                    <td colspan="1" style="border: none;"><label>Start Date (วันที่สามารถเริ่มงานได้)</label><input type="date" name="start_date" style="width: 50%;"></td>
+                </tr>
+            </table>
 
-            <h2 class="section-title">PERSONAL DATA (ข้อมูลส่วนตัว)</h2>
+            <h2 class="section-title">PERSONAL DATA (ข้อมูลส่วนตัว)</h2>
 
-            <table class="data-table" style="border: 1px solid black; margin-top: -1px;">
-                <tr style="height: 25px;">
-                    <td style="width: 40%;"><label>ชื่อ (นาย/นาง/นางสาว) / Name (MR./MRS./MISS)</label><input type="text" name="full_name"></td>
-                    <td style="width: 20%;"><label>ชื่อเล่น / Nick Name</label><input type="text" name="nick_name"></td>
-                    <td style="width: 40%;"><label>อีเมล์ / E-mail</label><input type="email" name="email"></td>
-                </tr>
-                <tr style="height: 25px;">
-                    <td><label>วัน/เดือน/ปี เกิด / Date of Birth</label><input type="date" name="dob"></td>
-                    <td><label>จังหวัดที่เกิด / Place of birth</label><input type="text" name="pob"></td>
-                    <td><label>มือถือ / Mobile</label><input type="tel" name="mobile"></td>
-                </tr>
-                <tr style="height: 25px;">
-                    <td><label>เลขบัตรประจำตัวประชาชน / I.D. Card No.</label><input type="text" name="id_card"></td>
-                    <td><label>ออกให้ที / Issued at</label><input type="text" name="id_issued_at"></td>
-                    <td><label>วันที่หมดอายุ / Date Expired</label><input type="date" name="id_expired"></td>
-                </tr>
-                <tr><td colspan="3"><label>ที่อยู่ตามสำเนาทะเบียนบ้าน / Address as per Cencus Registration : (กรุณาแนบสำเนาบัตรประชาชนและทะเบียนบ้าน)</label><input type="text" name="address_census"></td></tr>
-                <tr><td colspan="3"><label>ที่อยู่ปัจจุบันที่สามารถติดต่อได้สะดวก / Present Address</label><input type="text" name="address_present"></td></tr>
-            </table>
-            
-            <table class="data-table" style="border: 1px solid black; margin-top: -1px;">
-                <tr>
-                    <td style="width: 30%; border-right: 1px solid black; vertical-align: top;">
-                        <label style="font-weight: bold;">Military Status (สถานะทางทหาร)</label>
-                        <div class="checkbox-group" style="margin-top: 5px;">
-                            <div style="margin-bottom: 5px;"><input type="checkbox" name="military_status[]" value="Completed"><label>Completed (ผ่านการเกณฑ์ทหาร)</label></div>
-                            <div style="margin-bottom: 5px;"><input type="checkbox" name="military_status[]" value="R.O.T.C"><label>R.O.T.C (นักศึกษาวิชาทหาร)</label></div>
-                            <div style="display: flex; align-items: center;"><label>Other (อื่นๆระบุ)</label><input type="text" name="military_other" style="flex-grow: 1;"></div>
-                        </div>
-                    </td>
-                    <td style="width: 70%; vertical-align: top;">
-                        <table style="width: 100%; border-collapse: collapse; border: none;">
-                            <tr style="border: none;">
-                                <td colspan="4" style="padding: 0; border: none; font-weight: bold;"><label>Marital Status</label></td>
-                            </tr>
-                            <tr style="border: none;">
-                                <td style="width: 25%; padding: 0; border: none;"><div class="checkbox-group"><input type="radio" name="marital_status" value="Single"><label>Single (โสด)</label></div></td>
-                                <td style="width: 40%; padding: 0; border: none;"><div class="checkbox-group"><input type="radio" name="marital_status" value="Formal"><label>Formal Marriage (สมรสจดทะเบียน)</label></div></td>
-                                <td style="width: 35%; padding: 0; border: none;"><div class="checkbox-group"><input type="radio" name="marital_status" value="Separated"><label>Separated (แยกกันอยู่)</label></div></td>
-                            </tr>
-                            <tr style="border: none;">
-                                <td style="width: 40%; padding: 0; border: none;"><div class="checkbox-group"><input type="radio" name="marital_status" value="Informal"><label>Informal Marriage (สมรสไมจดทะเบียน)</label></div></td>
-                                <td colspan="3" style="padding: 0; border: none; text-align: right;"><label>จำนวนบุตรกี่คน</label><input type="number" name="num_children" style="width: 10%;"> Person</td>
-                            </tr>
-                            <tr style="border: none;">
-                                <td colspan="4" style="padding: 0; border: none;">
-                                    <div style="display: flex; flex-wrap: wrap; margin-top: 5px;">
-                                        <div style="width: 35%;"><label>ชื่อคู่สมรส / Spouse's Name</label><input type="text" name="spouse_name"></div>
-                                        <div style="width: 15%;"><label>อายุ / Age</label><input type="number" name="spouse_age"></div>
-                                        <div style="width: 25%;"><label>อาชีพ / Occupation</label><input type="text" name="spouse_occupation"></div>
-                                        <div style="width: 25%;"><label>ที่ทำงานของคู่สมรส / Present employment</label><input type="text" name="spouse_company"></div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
+            <table class="data-table" style="border: 1px solid black; margin-top: -1px;">
+                <tr style="height: 25px;">
+                    <td style="width: 40%;" data-label="ชื่อ (นาย/นาง/นางสาว) / Name"><label>ชื่อ (นาย/นาง/นางสาว) / Name (MR./MRS./MISS)</label><input type="text" name="full_name"></td>
+                    <td style="width: 20%;" data-label="ชื่อเล่น / Nick Name"><label>ชื่อเล่น / Nick Name</label><input type="text" name="nick_name"></td>
+                    <td style="width: 40%;" data-label="อีเมล์ / E-mail"><label>อีเมล์ / E-mail</label><input type="email" name="email"></td>
+                </tr>
+                <tr style="height: 25px;">
+                    <td data-label="วัน/เดือน/ปี เกิด / Date of Birth"><label>วัน/เดือน/ปี เกิด / Date of Birth</label><input type="date" name="dob"></td>
+                    <td data-label="จังหวัดที่เกิด / Place of birth"><label>จังหวัดที่เกิด / Place of birth</label><input type="text" name="pob"></td>
+                    <td data-label="มือถือ / Mobile"><label>มือถือ / Mobile</label><input type="tel" name="mobile"></td>
+                </tr>
+                <tr style="height: 25px;">
+                    <td data-label="เลขบัตรประจำตัวประชาชน / I.D. Card No."><label>เลขบัตรประจำตัวประชาชน / I.D. Card No.</label><input type="text" name="id_card"></td>
+                    <td data-label="ออกให้ที / Issued at"><label>ออกให้ที / Issued at</label><input type="text" name="id_issued_at"></td>
+                    <td data-label="วันที่หมดอายุ / Date Expired"><label>วันที่หมดอายุ / Date Expired</label><input type="date" name="id_expired"></td>
+                </tr>
+                <tr><td colspan="3"><label>ที่อยู่ตามสำเนาทะเบียนบ้าน / Address as per Cencus Registration : (กรุณาแนบสำเนาบัตรประชาชนและทะเบียนบ้าน)</label><input type="text" name="address_census"></td></tr>
+                <tr><td colspan="3"><label>ที่อยู่ปัจจุบันที่สามารถติดต่อได้สะดวก / Present Address</label><input type="text" name="address_present"></td></tr>
+            </table>
+            
+            <table class="data-table" style="border: 1px solid black; margin-top: -1px;">
+                <tr>
+                    <td style="width: 30%; border-right: 1px solid black; vertical-align: top;">
+                        <label style="font-weight: bold;">Military Status (สถานะทางทหาร)</label>
+                        <div class="checkbox-group" style="margin-top: 5px;">
+                            <div style="margin-bottom: 5px;"><input type="checkbox" name="military_status[]" value="Completed"><label>Completed (ผ่านการเกณฑ์ทหาร)</label></div>
+                            <div style="margin-bottom: 5px;"><input type="checkbox" name="military_status[]" value="R.O.T.C"><label>R.O.T.C (นักศึกษาวิชาทหาร)</label></div>
+                            <div style="display: flex; align-items: center;"><label>Other (อื่นๆระบุ)</label><input type="text" name="military_other" style="flex-grow: 1;"></div>
+                        </div>
+                    </td>
+                    <td style="width: 70%; vertical-align: top;">
+                        <table style="width: 100%; border-collapse: collapse; border: none;">
+                            <tr style="border: none;">
+                                <td colspan="4" style="padding: 0; border: none; font-weight: bold;"><label>Marital Status</label></td>
+                            </tr>
+                            <tr style="border: none;">
+                                <td style="width: 25%; padding: 0; border: none;"><div class="checkbox-group"><input type="radio" name="marital_status" value="Single"><label>Single (โสด)</label></div></td>
+                                <td style="width: 40%; padding: 0; border: none;"><div class="checkbox-group"><input type="radio" name="marital_status" value="Formal"><label>Formal Marriage (สมรสจดทะเบียน)</label></div></td>
+                                <td style="width: 35%; padding: 0; border: none;"><div class="checkbox-group"><input type="radio" name="marital_status" value="Separated"><label>Separated (แยกกันอยู่)</label></div></td>
+                            </tr>
+                            <tr style="border: none;">
+                                <td style="width: 40%; padding: 0; border: none;"><div class="checkbox-group"><input type="radio" name="marital_status" value="Informal"><label>Informal Marriage (สมรสไมจดทะเบียน)</label></div></td>
+                                <td colspan="3" style="padding: 0; border: none; text-align: right;"><label>จำนวนบุตรกี่คน</label><input type="number" name="num_children" style="width: 10%;"> Person</td>
+                            </tr>
+                            <tr style="border: none;">
+                                <td colspan="4" style="padding: 0; border: none;">
+                                    <div style="display: flex; flex-wrap: wrap; margin-top: 5px;">
+                                        <div style="width: 35%;"><label>ชื่อคู่สมรส / Spouse's Name</label><input type="text" name="spouse_name"></div>
+                                        <div style="width: 15%;"><label>อายุ / Age</label><input type="number" name="spouse_age"></div>
+                                        <div style="width: 25%;"><label>อาชีพ / Occupation</label><input type="text" name="spouse_occupation"></div>
+                                        <div style="width: 25%;"><label>ที่ทำงานของคู่สมรส / Present employment</label><input type="text" name="spouse_company"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
 
-            <h2 class="section-title" style="margin-top: 10px;">Family (ครอบครัว)</h2>
-            <table class="data-table family-table">
-                <thead>
-                    <tr>
-                        <th style="width: 15%;">Family (ครอบครัว)</th>
-                        <th style="width: 30%;">Name-Surname (ชื่อ-สกุล)</th>
-                        <th style="width: 10%;">Age (อายุ)</th>
-                        <th style="width: 10%;">Status (สถานภาพ)</th>
-                        <th style="width: 20%;">Occupation/Company (อาชีพ/บริษัท)</th>
-                        <th style="width: 15%;">Mobile No. (โทรศัพท์)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Father (บิดา)</td><td><input type="text" name="father_name"></td><td><input type="number" name="father_age"></td><td><input type="text" name="father_status"></td><td><input type="text" name="father_occupation"></td><td><input type="tel" name="father_mobile"></td></tr>
-                    <tr><td>Mother (มารดา)</td><td><input type="text" name="mother_name"></td><td><input type="number" name="mother_age"></td><td><input type="text" name="mother_status"></td><td><input type="text" name="mother_occupation"></td><td><input type="tel" name="mother_mobile"></td></tr>
-                    <tr style="height: 30px;">
-                        <td colspan="6" style="padding: 0; border: none;">
-                            <div style="display: flex; align-items: center; padding: 0 5px;">
-                                <label style="flex: 0 0 25%;">Number of Brother/Sister (จำนวนพี่น้อง)</label>
-                                <label style="flex: 0 0 15%;">Male (ชาย)<input type="number" name="num_male" style="width: 50%;"></label>
-                                <label style="flex: 0 0 15%;">Female (หญิง)<input type="number" name="num_female" style="width: 50%;"></label>
-                                <label style="flex: 0 0 45%;">Being the Number of (ผู้สมัครเป็นบุตรลำดับที่)<input type="number" name="child_order" style="width: 15%;"></label>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr><td>1.Brother/Sister (ชาย/หญิง)</td><td><input type="text" name="sibling_1_name"></td><td><input type="number" name="sibling_1_age"></td><td><input type="text" name="sibling_1_status"></td><td><input type="text" name="sibling_1_occupation"></td><td><input type="tel" name="sibling_1_mobile"></td></tr>
-                    <tr><td>2.Brother/Sister (ชาย/หญิง)</td><td><input type="text" name="sibling_2_name"></td><td><input type="number" name="sibling_2_age"></td><td><input type="text" name="sibling_2_status"></td><td><input type="text" name="sibling_2_occupation"></td><td><input type="tel" name="sibling_2_mobile"></td></tr>
-                    <tr><td>3.Brother/Sister (ชาย/หญิง)</td><td><input type="text" name="sibling_3_name"></td><td><input type="number" name="sibling_3_age"></td><td><input type="text" name="sibling_3_status"></td><td><input type="text" name="sibling_3_occupation"></td><td><input type="tel" name="sibling_3_mobile"></td></tr>
-                    <tr><td>4.Brother/Sister (ชาย/หญิง)</td><td><input type="text" name="sibling_4_name"></td><td><input type="number" name="sibling_4_age"></td><td><input type="text" name="sibling_4_status"></td><td><input type="text" name="sibling_4_occupation"></td><td><input type="tel" name="sibling_4_mobile"></td></tr>
-                </tbody>
-            </table>
-            
-            <div style="display: flex; margin-top: 10px;">
-                <label style="flex: 0 0 45%; display: flex; align-items: center; white-space: nowrap;">บุคคลที่สามารถติดต่อได้ในกรณีเหตุฉุกเฉิน / Contact person in case of emergency<input type="text" name="emergency_contact" style="width: 50%;"></label>
-                <label style="flex: 0 0 25%; display: flex; align-items: center; white-space: nowrap; margin-left: 10px;">เบอร์ติดต่อ / Tel<input type="tel" name="emergency_tel" style="width: 50%;"></label>
-                <label style="flex: 0 0 30%; display: flex; align-items: center; white-space: nowrap; margin-left: 10px;">ความสัมพันธ์ / Relationship<input type="text" name="emergency_relationship" style="width: 40%;"></label>
-            </div>
-        </div>
-        <h2 class="section-title">EDUCATION HISTORY (ประวัติการศึกษา)</h2>
+            <h2 class="section-title" style="margin-top: 10px;">Family (ครอบครัว)</h2>
+            <table class="data-table family-table">
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">Family (ครอบครัว)</th>
+                        <th style="width: 30%;">Name-Surname (ชื่อ-สกุล)</th>
+                        <th style="width: 10%;">Age (อายุ)</th>
+                        <th style="width: 10%;">Status (สถานภาพ)</th>
+                        <th style="width: 20%;">Occupation/Company (อาชีพ/บริษัท)</th>
+                        <th style="width: 15%;">Mobile No. (โทรศัพท์)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Father (บิดา)</td><td data-label="Name-Surname (ชื่อ-สกุล)"><input type="text" name="father_name"></td><td data-label="Age (อายุ)"><input type="number" name="father_age"></td><td data-label="Status (สถานภาพ)"><input type="text" name="father_status"></td><td data-label="Occupation/Company (อาชีพ/บริษัท)"><input type="text" name="father_occupation"></td><td data-label="Mobile No. (โทรศัพท์)"><input type="tel" name="father_mobile"></td></tr>
+                    <tr><td>Mother (มารดา)</td><td data-label="Name-Surname (ชื่อ-สกุล)"><input type="text" name="mother_name"></td><td data-label="Age (อายุ)"><input type="number" name="mother_age"></td><td data-label="Status (สถานภาพ)"><input type="text" name="mother_status"></td><td data-label="Occupation/Company (อาชีพ/บริษัท)"><input type="text" name="mother_occupation"></td><td data-label="Mobile No. (โทรศัพท์)"><input type="tel" name="mother_mobile"></td></tr>
+                    <tr style="height: 30px;">
+                        <td colspan="6" style="padding: 0; border: none;">
+                            <div style="display: flex; align-items: center; padding: 0 5px;">
+                                <label style="flex: 0 0 25%;">Number of Brother/Sister (จำนวนพี่น้อง)</label>
+                                <label style="flex: 0 0 15%;">Male (ชาย)<input type="number" name="num_male" style="width: 50%;"></label>
+                                <label style="flex: 0 0 15%;">Female (หญิง)<input type="number" name="num_female" style="width: 50%;"></label>
+                                <label style="flex: 0 0 45%;">Being the Number of (ผู้สมัครเป็นบุตรลำดับที่)<input type="number" name="child_order" style="width: 15%;"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr><td>1.Brother/Sister (ชาย/หญิง)</td><td data-label="Name-Surname (ชื่อ-สกุล)"><input type="text" name="sibling_1_name"></td><td data-label="Age (อายุ)"><input type="number" name="sibling_1_age"></td><td data-label="Status (สถานภาพ)"><input type="text" name="sibling_1_status"></td><td data-label="Occupation/Company (อาชีพ/บริษัท)"><input type="text" name="sibling_1_occupation"></td><td data-label="Mobile No. (โทรศัพท์)"><input type="tel" name="sibling_1_mobile"></td></tr>
+                    <tr><td>2.Brother/Sister (ชาย/หญิง)</td><td data-label="Name-Surname (ชื่อ-สกุล)"><input type="text" name="sibling_2_name"></td><td data-label="Age (อายุ)"><input type="number" name="sibling_2_age"></td><td data-label="Status (สถานภาพ)"><input type="text" name="sibling_2_status"></td><td data-label="Occupation/Company (อาชีพ/บริษัท)"><input type="text" name="sibling_2_occupation"></td><td data-label="Mobile No. (โทรศัพท์)"><input type="tel" name="sibling_2_mobile"></td></tr>
+                    <tr><td>3.Brother/Sister (ชาย/หญิง)</td><td data-label="Name-Surname (ชื่อ-สกุล)"><input type="text" name="sibling_3_name"></td><td data-label="Age (อายุ)"><input type="number" name="sibling_3_age"></td><td data-label="Status (สถานภาพ)"><input type="text" name="sibling_3_status"></td><td data-label="Occupation/Company (อาชีพ/บริษัท)"><input type="text" name="sibling_3_occupation"></td><td data-label="Mobile No. (โทรศัพท์)"><input type="tel" name="sibling_3_mobile"></td></tr>
+                    <tr><td>4.Brother/Sister (ชาย/หญิง)</td><td data-label="Name-Surname (ชื่อ-สกุล)"><input type="text" name="sibling_4_name"></td><td data-label="Age (อายุ)"><input type="number" name="sibling_4_age"></td><td data-label="Status (สถานภาพ)"><input type="text" name="sibling_4_status"></td><td data-label="Occupation/Company (อาชีพ/บริษัท)"><input type="text" name="sibling_4_occupation"></td><td data-label="Mobile No. (โทรศัพท์)"><input type="tel" name="sibling_4_mobile"></td></tr>
+                </tbody>
+            </table>
+            
+            <div style="display: flex; margin-top: 10px;">
+                <label style="flex: 0 0 45%; display: flex; align-items: center; white-space: nowrap;">บุคคลที่สามารถติดต่อได้ในกรณีเหตุฉุกเฉิน / Contact person in case of emergency<input type="text" name="emergency_contact" style="width: 50%;"></label>
+                <label style="flex: 0 0 25%; display: flex; align-items: center; white-space: nowrap; margin-left: 10px;">เบอร์ติดต่อ / Tel<input type="tel" name="emergency_tel" style="width: 50%;"></label>
+                <label style="flex: 0 0 30%; display: flex; align-items: center; white-space: nowrap; margin-left: 10px;">ความสัมพันธ์ / Relationship<input type="text" name="emergency_relationship" style="width: 40%;"></label>
+            </div>
+        </div>
+        <h2 class="section-title">EDUCATION HISTORY (ประวัติการศึกษา)</h2>
 
-        <table class="data-table education-table">
-            <thead>
-                <tr>
-                    <th style="width: 20%;">ระดับการศึกษา / Level of Education</th>
-                    <th style="width: 5%;"></th>
-                    <th style="width: 25%;">สถาบันการศึกษา / School and/or Institute</th>
-                    <th style="width: 20%;">(เดือน/ปีที่เริ่ม-เดือน/ปีที่จบ) / Period of Study</th>
-                    <th style="width: 20%;">วุฒิการศึกษา/วิชาเอก / Degree/Major</th>
-                    <th style="width: 10%;">เกรดเฉลี่ย / GPA</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>มัธยมศึกษาตอนต้น / Secondary School</td><td>ม.3</td><td><input type="text" name="edu_sec_m3_school"></td><td><input type="text" name="edu_sec_m3_period"></td><td><input type="text" name="edu_sec_m3_degree"></td><td><input type="text" name="edu_sec_m3_gpa"></td></tr>
-                <tr><td>มัธยมศึกษาตอนปลาย / High School</td><td>ม.6</td><td><input type="text" name="edu_high_m6_school"></td><td><input type="text" name="edu_high_m6_period"></td><td><input type="text" name="edu_high_m6_degree"></td><td><input type="text" name="edu_high_m6_gpa"></td></tr>
-                <tr><td rowspan="2">อาชีวศึกษา / Vocational Education</td><td>ปวช.</td><td><input type="text" name="edu_voc_pvc_school"></td><td><input type="text" name="edu_voc_pvc_period"></td><td><input type="text" name="edu_voc_pvc_degree"></td><td><input type="text" name="edu_voc_pvc_gpa"></td></tr>
-                <tr><td>ปวส.</td><td><input type="text" name="edu_voc_pvs_school"></td><td><input type="text" name="edu_voc_pvs_period"></td><td><input type="text" name="edu_voc_pvs_degree"></td><td><input type="text" name="edu_voc_pvs_gpa"></td></tr>
-                <tr><td rowspan="3">มหาวิทยาลัย / University</td><td>ป.ตรี</td><td><input type="text" name="edu_uni_b_school"></td><td><input type="text" name="edu_uni_b_period"></td><td><input type="text" name="edu_uni_b_degree"></td><td><input type="text" name="edu_uni_b_gpa"></td></tr>
-                <tr><td>ป.โท</td><td><input type="text" name="edu_uni_m_school"></td><td><input type="text" name="edu_uni_m_period"></td><td><input type="text" name="edu_uni_m_degree"></td><td><input type="text" name="edu_uni_m_gpa"></td></tr>
-                <tr><td>ป.เอก</td><td><input type="text" name="edu_uni_d_school"></td><td><input type="text" name="edu_uni_d_period"></td><td><input type="text" name="edu_uni_d_degree"></td><td><input type="text" name="edu_uni_d_gpa"></td></tr>
-            </tbody>
-        </table>
-        <label style="display: flex; align-items: center; margin-top: 5px;">Scholarship, Honor, Award (กรณีที่เคยได้รับทุน, รางวัล, เกียรตินิยม โปรดระบุ) :<input type="text" name="scholarship"></label>
+        <table class="data-table education-table">
+            <thead>
+                <tr>
+                    <th style="width: 20%;">ระดับการศึกษา / Level of Education</th>
+                    <th style="width: 5%;"></th>
+                    <th style="width: 25%;">สถาบันการศึกษา / School and/or Institute</th>
+                    <th style="width: 20%;">(เดือน/ปีที่เริ่ม-เดือน/ปีที่จบ) / Period of Study</th>
+                    <th style="width: 20%;">วุฒิการศึกษา/วิชาเอก / Degree/Major</th>
+                    <th style="width: 10%;">เกรดเฉลี่ย / GPA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>มัธยมศึกษาตอนต้น / Secondary School</td><td>ม.3</td><td data-label="สถาบันการศึกษา / School"><input type="text" name="edu_sec_m3_school"></td><td data-label="Period of Study"><input type="text" name="edu_sec_m3_period"></td><td data-label="Degree/Major"><input type="text" name="edu_sec_m3_degree"></td><td data-label="GPA"><input type="text" name="edu_sec_m3_gpa"></td></tr>
+                <tr><td>มัธยมศึกษาตอนปลาย / High School</td><td>ม.6</td><td data-label="สถาบันการศึกษา / School"><input type="text" name="edu_high_m6_school"></td><td data-label="Period of Study"><input type="text" name="edu_high_m6_period"></td><td data-label="Degree/Major"><input type="text" name="edu_high_m6_degree"></td><td data-label="GPA"><input type="text" name="edu_high_m6_gpa"></td></tr>
+                <tr><td rowspan="2">อาชีวศึกษา / Vocational Education</td><td>ปวช.</td><td data-label="สถาบันการศึกษา / School"><input type="text" name="edu_voc_pvc_school"></td><td data-label="Period of Study"><input type="text" name="edu_voc_pvc_period"></td><td data-label="Degree/Major"><input type="text" name="edu_voc_pvc_degree"></td><td data-label="GPA"><input type="text" name="edu_voc_pvc_gpa"></td></tr>
+                <tr><td>ปวส.</td><td data-label="สถาบันการศึกษา / School"><input type="text" name="edu_voc_pvs_school"></td><td data-label="Period of Study"><input type="text" name="edu_voc_pvs_period"></td><td data-label="Degree/Major"><input type="text" name="edu_voc_pvs_degree"></td><td data-label="GPA"><input type="text" name="edu_voc_pvs_gpa"></td></tr>
+                <tr><td rowspan="3">มหาวิทยาลัย / University</td><td>ป.ตรี</td><td data-label="สถาบันการศึกษา / School"><input type="text" name="edu_uni_b_school"></td><td data-label="Period of Study"><input type="text" name="edu_uni_b_period"></td><td data-label="Degree/Major"><input type="text" name="edu_uni_b_degree"></td><td data-label="GPA"><input type="text" name="edu_uni_b_gpa"></td></tr>
+                <tr><td>ป.โท</td><td data-label="สถาบันการศึกษา / School"><input type="text" name="edu_uni_m_school"></td><td data-label="Period of Study"><input type="text" name="edu_uni_m_period"></td><td data-label="Degree/Major"><input type="text" name="edu_uni_m_degree"></td><td data-label="GPA"><input type="text" name="edu_uni_m_gpa"></td></tr>
+                <tr><td>ป.เอก</td><td data-label="สถาบันการศึกษา / School"><input type="text" name="edu_uni_d_school"></td><td data-label="Period of Study"><input type="text" name="edu_uni_d_period"></td><td data-label="Degree/Major"><input type="text" name="edu_uni_d_degree"></td><td data-label="GPA"><input type="text" name="edu_uni_d_gpa"></td></tr>
+            </tbody>
+        </table>
+        <label style="display: flex; align-items: center; margin-top: 5px;">Scholarship, Honor, Award (กรณีที่เคยได้รับทุน, รางวัล, เกียรตินิยม โปรดระบุ) :<input type="text" name="scholarship"></label>
 
-        <h2 class="section-title">EMPLOYMENT HISTORY (ประวัติการทำงาน)</h2>
-        <p style="font-size: 8pt; margin: 0 0 10px 0;">เรียงลำดับการทํางานล่าสุดไปจนถึงการทํางานครั้งแรก</p>
+        <h2 class="section-title">EMPLOYMENT HISTORY (ประวัติการทำงาน)</h2>
+        <p style="font-size: 8pt; margin: 0 0 10px 0;">เรียงลำดับการทํางานล่าสุดไปจนถึงการทํางานครั้งแรก</p>
 
-        <div class="employment-block" style="border: 1px solid black; padding: 5px; margin-bottom: 10px;">
-            <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="font-weight: bold; white-space: nowrap; flex: 0 0 30%;">1.COMPANY NAME (ชื่อบริษัท) :</label> 
-                <input type="text" name="emp_1_company" style="width: 40%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Basic Salary (ฐานเงินเดือน):</label><input type="text" name="emp_1_salary" style="width: 10%; margin-right: 5px;">Baht
-            </div>
-            
-            <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Address of company (ที่อยู่บริษัท):</label><input type="text" name="emp_1_address" style="width: 40%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Position (ค่าตำแหน่ง):</label><input type="text" name="emp_1_position_inc" style="width: 10%; margin-right: 5px;">Baht
-            </div>
+        <div class="employment-block" style="border: 1px solid black; padding: 5px; margin-bottom: 10px;">
+            <div style="display: flex; flex-wrap: wrap; align-items: center;">
+                <label style="font-weight: bold; white-space: nowrap; flex: 0 0 30%;">1.COMPANY NAME (ชื่อบริษัท) :</label> 
+                <input type="text" name="emp_1_company" style="width: 40%; margin-right: 20px;">
+                <label style="white-space: nowrap;">Basic Salary (ฐานเงินเดือน):</label><input type="text" name="emp_1_salary" style="width: 10%; margin-right: 5px;">Baht
+            </div>
+            
+            <div style="display: flex; flex-wrap: wrap; align-items: center;">
+                <label style="white-space: nowrap; flex: 0 0 30%;">Address of company (ที่อยู่บริษัท):</label><input type="text" name="emp_1_address" style="width: 40%; margin-right: 20px;">
+                <label style="white-space: nowrap;">Position (ค่าตำแหน่ง):</label><input type="text" name="emp_1_position_inc" style="width: 10%; margin-right: 5px;">Baht
+            </div>
 
-            <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Tel. No. (โทรศัพท์):</label><input type="tel" name="emp_1_tel" style="width: 15%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Type of Business (ลักษณะธุรกิจ):</label><input type="text" name="emp_1_type" style="width: 25%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Cost of Living (ค่าครองชีพ):</label><input type="text" name="emp_1_cost_live" style="width: 10%; margin-right: 5px;">Baht
-            </div>
+            <div style="display: flex; flex-wrap: wrap; align-items: center;">
+                <label style="white-space: nowrap; flex: 0 0 30%;">Tel. No. (โทรศัพท์):</label><input type="tel" name="emp_1_tel" style="width: 15%; margin-right: 20px;">
+                <label style="white-space: nowrap;">Type of Business (ลักษณะธุรกิจ):</label><input type="text" name="emp_1_type" style="width: 25%; margin-right: 20px;">
+                <label style="white-space: nowrap;">Cost of Living (ค่าครองชีพ):</label><input type="text" name="emp_1_cost_live" style="width: 10%; margin-right: 5px;">Baht
+            </div>
 
-            <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Date of employment (ว.ด.ป. ที่เริ่มทํางาน) : From (จากวันที่)</label><input type="date" name="emp_1_from" style="width: 15%; margin-right: 5px;">
-                <label style="white-space: nowrap;">To (ถึงวันที่)</label><input type="date" name="emp_1_to" style="width: 15%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Other Income (รายได้อื่นๆ):</label><input type="text" name="emp_1_other_inc" style="width: 10%; margin-right: 5px;">Baht
-            </div>
+            <div style="display: flex; flex-wrap: wrap; align-items: center;">
+                <label style="white-space: nowrap; flex: 0 0 30%;">Date of employment (ว.ด.ป. ที่เริ่มทํางาน) : From (จากวันที่)</label><input type="date" name="emp_1_from" style="width: 15%; margin-right: 5px;">
+                <label style="white-space: nowrap;">To (ถึงวันที่)</label><input type="date" name="emp_1_to" style="width: 15%; margin-right: 20px;">
+                <label style="white-space: nowrap;">Other Income (รายได้อื่นๆ):</label><input type="text" name="emp_1_other_inc" style="width: 10%; margin-right: 5px;">Baht
+            </div>
 
-            <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Position (ตำแหน่ง):</label><input type="text" name="emp_1_title" style="width: 25%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Department (ฝ่าย):</label><input type="text" name="emp_1_dept" style="width: 25%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Reason of Leaving (สาเหตุที่ลาออก):</label><input type="text" name="emp_1_reason" style="width: 15%;">
-            </div>
+            <div style="display: flex; flex-wrap: wrap; align-items: center;">
+                <label style="white-space: nowrap; flex: 0 0 30%;">Position (ตำแหน่ง):</label><input type="text" name="emp_1_title" style="width: 25%; margin-right: 20px;">
+                <label style="white-space: nowrap;">Department (ฝ่าย):</label><input type="text" name="emp_1_dept" style="width: 25%; margin-right: 20px;">
+                <label style="white-space: nowrap;">Reason of Leaving (สาเหตุที่ลาออก):</label><input type="text" name="emp_1_reason" style="width: 15%;">
+            </div>
 
-            <label style="display: block; font-weight: bold; margin-top: 5px;">Describe Major Duties (รายละเอียดของงาน):</label>
-            <textarea name="emp_1_duties"></textarea>
-        </div>
-        
-        <div class="employment-block" style="border: 1px solid black; padding: 5px; margin-bottom: 10px;">
-            <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="font-weight: bold; white-space: nowrap; flex: 0 0 30%;">2.COMPANY NAME (ชื่อบริษัท) :</label> 
-                <input type="text" name="emp_2_company" style="width: 40%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Basic Salary (ฐานเงินเดือน):</label><input type="text" name="emp_2_salary" style="width: 10%; margin-right: 5px;">Baht
-            </div>
-            
-            <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Address of company (ที่อยู่บริษัท):</label><input type="text" name="emp_2_address" style="width: 40%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Position (ค่าตำแหน่ง):</label><input type="text" name="emp_2_position_inc" style="width: 10%; margin-right: 5px;">Baht
-            </div>
+            <label style="display: block; font-weight: bold; margin-top: 5px;">Describe Major Duties (รายละเอียดของงาน):</label>
+            <textarea name="emp_1_duties"></textarea>
+        </div>
+        
+        <div class="employment-block" style="border: 1px solid black; padding: 5px; margin-bottom: 10px;">
+            <div style="display: flex; flex-wrap: wrap; align-items: center;">
+                <label style="font-weight: bold; white-space: nowrap; flex: 0 0 30%;">2.COMPANY NAME (ชื่อบริษัท) :</label> 
+                <input type="text" name="emp_2_company" style="width: 40%; margin-right: 20px;">
+                <label style="white-space: nowrap;">Basic Salary (ฐานเงินเดือน):</label><input type="text" name="emp_2_salary" style="width: 10%; margin-right: 5px;">Baht
+            </div>
+            
+            <div style="display: flex; flex-wrap: wrap; align-items: center;">
+                <label style="white-space: nowrap; flex: 0 0 30%;">Address of company (ที่อยู่บริษัท):</label><input type="text" name="emp_2_address" style="width: 40%; margin-right: 20px;">
+                <label style="white-space: nowrap;">Position (ค่าตำแหน่ง):</label><input type="text" name="emp_2_position_inc" style="width: 10%; margin-right: 5px;">Baht
+            </div>
 
-            <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Tel. No. (โทรศัพท์):</label><input type="tel" name="emp_2_tel" style="width: 15%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Type of Business (ลักษณะธุรกิจ):</label><input type="text" name="emp_2_type" style="width: 25%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Cost of Living (ค่าครองชีพ):</label><input type="text" name="emp_2_cost_live" style="width: 10%; margin-right: 5px;">Baht
-            </div>
+            <div style="display: flex; flex-wrap: wrap; align-items: center;">
+                <label style="white-space: nowrap; flex: 0 0 30%;">Tel. No. (โทรศัพท์):</label><input type="tel" name="emp_2_tel" style="width: 15%; margin-right: 20px;">
+                <label style="white-space: nowrap;">Type of Business (ลักษณะธุรกิจ):</label><input type="text" name="emp_2_type" style="width: 25%; margin-right: 20px;">
+                <label style="white-space: nowrap;">Cost of Living (ค่าครองชีพ):</label><input type="text" name="emp_2_cost_live" style="width: 10%; margin-right: 5px;">Baht
+            </div>
 
-            <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Date of employment (ว.ด.ป. ที่เริ่มทํางาน) : From (จากวันที่)</label><input type="date" name="emp_2_from" style="width: 15%; margin-right: 5px;">
-                <label style="white-space: nowrap;">To (ถึงวันที่)</label><input type="date" name="emp_2_to" style="width: 15%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Other Income (รายได้อื่นๆ):</label><input type="text" name="emp_2_other_inc" style="width: 10%; margin-right: 5px;">Baht
-            </div>
+            <div style="display: flex; flex-wrap: wrap; align-items: center;">
+                <label style="white-space: nowrap; flex: 0 0 30%;">Date of employment (ว.ด.ป. ที่เริ่มทํางาน) : From (จากวันที่)</label><input type="date" name="emp_2_from" style="width: 15%; margin-right: 5px;">
+                <label style="white-space: nowrap;">To (ถึงวันที่)</label><input type="date" name="emp_2_to" style="width: 15%; margin-right: 20px;">
+                <label style="white-space: nowrap;">Other Income (รายได้อื่นๆ):</label><input type="text" name="emp_2_other_inc" style="width: 10%; margin-right: 5px;">Baht
+            </div>
 
-            <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Position (ตำแหน่ง):</label><input type="text" name="emp_2_title" style="width: 25%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Department (ฝ่าย):</label><input type="text" name="emp_2_dept" style="width: 25%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Reason of Leaving (สาเหตุที่ลาออก):</label><input type="text" name="emp_2_reason" style="width: 15%;">
-            </div>
+            <div style="display: flex; flex-wrap: wrap; align-items: center;">
+                <label style="white-space: nowrap; flex: 0 0 30%;">Position (ตำแหน่ง):</label><input type="text" name="emp_2_title" style="width: 25%; margin-right: 20px;">
+                <label style="white-space: nowrap;">Department (ฝ่าย):</label><input type="text" name="emp_2_dept" style="width: 25%; margin-right: 20px;">
+                <label style="white-space: nowrap;">Reason of Leaving (สาเหตุที่ลาออก):</label><input type="text" name="emp_2_reason" style="width: 15%;">
+            </div>
 
-            <label style="display: block; font-weight: bold; margin-top: 5px;">Describe Major Duties (รายละเอียดของงาน):</label>
-            <textarea name="emp_2_duties"></textarea>
-        </div>
+            <label style="display: block; font-weight: bold; margin-top: 5px;">Describe Major Duties (รายละเอียดของงาน):</label>
+            <textarea name="emp_2_duties"></textarea>
+        </div>
 
-        <div class="employment-block" style="border: 1px solid black; padding: 5px; margin-bottom: 10px;">
-            <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="font-weight: bold; white-space: nowrap; flex: 0 0 30%;">3.COMPANY NAME (ชื่อบริษัท) :</label> 
-                <input type="text" name="emp_3_company" style="width: 40%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Basic Salary (ฐานเงินเดือน):</label><input type="text" name="emp_3_salary" style="width: 10%; margin-right: 5px;">Baht
-            </div>
-            
-            <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Address of company (ที่อยู่บริษัท):</label><input type="text" name="emp_3_address" style="width: 40%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Position (ค่าตำแหน่ง):</label><input type="text" name="emp_3_position_inc" style="width: 10%; margin-right: 5px;">Baht
-            </div>
+        <div class="employment-block" style="border: 1px solid black; padding: 5px; margin-bottom: 10px;">
+            <div style="display: flex; flex-wrap: wrap; align-items: center;">
+                <label style="font-weight: bold; white-space: nowrap; flex: 0 0 30%;">3.COMPANY NAME (ชื่อบริษัท) :</label> 
+                <input type="text" name="emp_3_company" style="width: 40%; margin-right: 20px;">
+                <label style="white-space: nowrap;">Basic Salary (ฐานเงินเดือน):</label><input type="text" name="emp_3_salary" style="width: 10%; margin-right: 5px;">Baht
+            </div>
+            
+            <div style="display: flex; flex-wrap: wrap; align-items: center;">
+                <label style="white-space: nowrap; flex: 0 0 30%;">Address of company (ที่อยู่บริษัท):</label><input type="text" name="emp_3_address" style="width: 40%; margin-right: 20px;">
+                <label style="white-space: nowrap;">Position (ค่าตำแหน่ง):</label><input type="text" name="emp_3_position_inc" style="width: 10%; margin-right: 5px;">Baht
+            </div>
 
-            <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Tel. No. (โทรศัพท์):</label><input type="tel" name="emp_3_tel" style="width: 15%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Type of Business (ลักษณะธุรกิจ):</label><input type="text" name="emp_3_type" style="width: 25%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Cost of Living (ค่าครองชีพ):</label><input type="text" name="emp_3_cost_live" style="width: 10%; margin-right: 5px;">Baht
-            </div>
+            <div style="display: flex; flex-wrap: wrap; align-items: center;">
+                <label style="white-space: nowrap; flex: 0 0 30%;">Tel. No. (โทรศัพท์):</label><input type="tel" name="emp_3_tel" style="width: 15%; margin-right: 20px;">
+                <label style="white-space: nowrap;">Type of Business (ลักษณะธุรกิจ):</label><input type="text" name="emp_3_type" style="width: 25%; margin-right: 20px;">
+                <label style="white-space: nowrap;">Cost of Living (ค่าครองชีพ):</label><input type="text" name="emp_3_cost_live" style="width: 10%; margin-right: 5px;">Baht
+            </div>
 
-            <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Date of employment (ว.ด.ป. ที่เริ่มทํางาน) : From (จากวันที่)</label><input type="date" name="emp_3_from" style="width: 15%; margin-right: 5px;">
-                <label style="white-space: nowrap;">To (ถึงวันที่)</label><input type="date" name="emp_3_to" style="width: 15%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Other Income (รายได้อื่นๆ):</label><input type="text" name="emp_3_other_inc" style="width: 10%; margin-right: 5px;">Baht
-            </div>
+            <div style="display: flex; flex-wrap: wrap; align-items: center;">
+                <label style="white-space: nowrap; flex: 0 0 30%;">Date of employment (ว.ด.ป. ที่เริ่มทํางาน) : From (จากวันที่)</label><input type="date" name="emp_3_from" style="width: 15%; margin-right: 5px;">
+                <label style="white-space: nowrap;">To (ถึงวันที่)</label><input type="date" name="emp_3_to" style="width: 15%; margin-right: 20px;">
+                <label style="white-space: nowrap;">Other Income (รายได้อื่นๆ):</label><input type="text" name="emp_3_other_inc" style="width: 10%; margin-right: 5px;">Baht
+            </div>
 
-            <div style="display: flex; flex-wrap: wrap; align-items: center;">
-                <label style="white-space: nowrap; flex: 0 0 30%;">Position (ตำแหน่ง):</label><input type="text" name="emp_3_title" style="width: 25%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Department (ฝ่าย):</label><input type="text" name="emp_3_dept" style="width: 25%; margin-right: 20px;">
-                <label style="white-space: nowrap;">Reason of Leaving (สาเหตุที่ลาออก):</label><input type="text" name="emp_3_reason" style="width: 15%;">
-            </div>
+            <div style="display: flex; flex-wrap: wrap; align-items: center;">
+                <label style="white-space: nowrap; flex: 0 0 30%;">Position (ตำแหน่ง):</label><input type="text" name="emp_3_title" style="width: 25%; margin-right: 20px;">
+                <label style="white-space: nowrap;">Department (ฝ่าย):</label><input type="text" name="emp_3_dept" style="width: 25%; margin-right: 20px;">
+                <label style="white-space: nowrap;">Reason of Leaving (สาเหตุที่ลาออก):</label><input type="text" name="emp_3_reason" style="width: 15%;">
+            </div>
 
-            <label style="display: block; font-weight: bold; margin-top: 5px;">Describe Major Duties (รายละเอียดของงาน):</label>
-            <textarea name="emp_3_duties"></textarea>
-        </div>
+            <label style="display: block; font-weight: bold; margin-top: 5px;">Describe Major Duties (รายละเอียดของงาน):</label>
+            <textarea name="emp_3_duties"></textarea>
+        </div>
 
-        <h2 class="section-title">SPECIAL SKILL (ความสามารถพิเศษ)</h2>
+        <h2 class="section-title">SPECIAL SKILL (ความสามารถพิเศษ)</h2>
 
-        <table class="data-table skill-table">
-            <thead>
-                <tr>
-                    <th rowspan="2" style="width: 15%;">ความสามารถทางภาษา / Language Proficiency</th>
-                    <th colspan="3">Listenning (การฟัง)</th>
-                    <th colspan="3">Speaking (การพูด)</th>
-                    <th colspan="3">Reading (การอ่าน)</th>
-                    <th colspan="3">Writing (การเขียน)</th>
-                    <th rowspan="2" style="width: 15%;">Computer Knowledge</th>
-                </tr>
-                <tr>
-                    <th>Fluent</th><th>Good</th><th>Fair</th>
-                    <th>Fluent</th><th>Good</th><th>Fair</th>
-                    <th>Fluent</th><th>Good</th><th>Fair</th>
-                    <th>Fluent</th><th>Good</th><th>Fair</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>English (ภาษาอังกฤษ)</td>
-                    <td><input type="radio" name="eng_listen" value="Fluent"></td>
-                    <td><input type="radio" name="eng_listen" value="Good"></td>
-                    <td><input type="radio" name="eng_listen" value="Fair"></td>
-                    <td><input type="radio" name="eng_speaking" value="Fluent"></td>
-                    <td><input type="radio" name="eng_speaking" value="Good"></td>
-                    <td><input type="radio" name="eng_speaking" value="Fair"></td>
-                    <td><input type="radio" name="eng_reading" value="Fluent"></td>
-                    <td><input type="radio" name="eng_reading" value="Good"></td>
-                    <td><input type="radio" name="eng_reading" value="Fair"></td>
-                    <td><input type="radio" name="eng_writing" value="Fluent"></td>
-                    <td><input type="radio" name="eng_writing" value="Good"></td>
-                    <td><input type="radio" name="eng_writing" value="Fair"></td>
-                    <td rowspan="3" style="text-align: left;">
-                        <div class="checkbox-group"><input type="checkbox" name="comp_knowledge[]" value="Word"><label>Ms.Office Word</label></div>
-                        <div class="checkbox-group"><input type="checkbox" name="comp_knowledge[]" value="Excel"><label>Excel</label></div>
-                        <div class="checkbox-group"><input type="checkbox" name="comp_knowledge[]" value="Powerpoint"><label>Powerpoint</label></div>
-                        <div style="display: flex; align-items: center; margin-top: 5px;"><label>Others</label><input type="text" name="comp_others" style="width: 70%;"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Japanese (ภาษาญี่ปุ่น)</td>
-                    <td><input type="radio" name="jp_listen" value="Fluent"></td>
-                    <td><input type="radio" name="jp_listen" value="Good"></td>
-                    <td><input type="radio" name="jp_listen" value="Fair"></td>
-                    <td><input type="radio" name="jp_speaking" value="Fluent"></td>
-                    <td><input type="radio" name="jp_speaking" value="Good"></td>
-                    <td><input type="radio" name="jp_speaking" value="Fair"></td>
-                    <td><input type="radio" name="jp_reading" value="Fluent"></td>
-                    <td><input type="radio" name="jp_reading" value="Good"></td>
-                    <td><input type="radio" name="jp_reading" value="Fair"></td>
-                    <td><input type="radio" name="jp_writing" value="Fluent"></td>
-                    <td><input type="radio" name="jp_writing" value="Good"></td>
-                    <td><input type="radio" name="jp_writing" value="Fair"></td>
-                </tr>
-                <tr>
-                    <td>Others (อื่นๆ)<input type="text" name="lang_other_name" style="width: 50%; border-bottom: 1px dotted black;"></td>
-                    <td><input type="radio" name="other_listen" value="Fluent"></td>
-                    <td><input type="radio" name="other_listen" value="Good"></td>
-                    <td><input type="radio" name="other_listen" value="Fair"></td>
-                    <td><input type="radio" name="other_speaking" value="Fluent"></td>
-                    <td><input type="radio" name="other_speaking" value="Good"></td>
-                    <td><input type="radio" name="other_speaking" value="Fair"></td>
-                    <td><input type="radio" name="other_reading" value="Fluent"></td>
-                    <td><input type="radio" name="other_reading" value="Good"></td>
-                    <td><input type="radio" name="other_reading" value="Fair"></td>
-                    <td><input type="radio" name="other_writing" value="Fluent"></td>
-                    <td><input type="radio" name="other_writing" value="Good"></td>
-                    <td><input type="radio" name="other_writing" value="Fair"></td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <label style="display: flex; align-items: center; margin-top: 5px;">Other special skills (ความสามารถพิเศษอื่นๆ):<input type="text" name="other_skills"></label>
-        
-        <div style="display: flex; margin-top: 5px;">
-            <label style="flex: 1; display: flex; align-items: center;">Hobbies (งานอดิเรก):<input type="text" name="hobbies"></label>
-            <label style="flex: 1; display: flex; align-items: center; margin-left: 20px;">Sport (กีฬา):<input type="text" name="sport"></label>
-        </div>
+        <table class="data-table skill-table">
+            <thead>
+                <tr>
+                    <th rowspan="2" style="width: 15%;">ความสามารถทางภาษา / Language Proficiency</th>
+                    <th colspan="3">Listenning (การฟัง)</th>
+                    <th colspan="3">Speaking (การพูด)</th>
+                    <th colspan="3">Reading (การอ่าน)</th>
+                    <th colspan="3">Writing (การเขียน)</th>
+                    <th rowspan="2" style="width: 15%;">Computer Knowledge</th>
+                </tr>
+                <tr>
+                    <th>Fluent</th><th>Good</th><th>Fair</th>
+                    <th>Fluent</th><th>Good</th><th>Fair</th>
+                    <th>Fluent</th><th>Good</th><th>Fair</th>
+                    <th>Fluent</th><th>Good</th><th>Fair</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>English (ภาษาอังกฤษ)</td>
+                    <td><input type="radio" name="eng_listen" value="Fluent"><label>Fluent</label></td>
+                    <td><input type="radio" name="eng_listen" value="Good"><label>Good</label></td>
+                    <td><input type="radio" name="eng_listen" value="Fair"><label>Fair</label></td>
+                    <td><input type="radio" name="eng_speaking" value="Fluent"><label>Fluent</label></td>
+                    <td><input type="radio" name="eng_speaking" value="Good"><label>Good</label></td>
+                    <td><input type="radio" name="eng_speaking" value="Fair"><label>Fair</label></td>
+                    <td><input type="radio" name="eng_reading" value="Fluent"><label>Fluent</label></td>
+                    <td><input type="radio" name="eng_reading" value="Good"><label>Good</label></td>
+                    <td><input type="radio" name="eng_reading" value="Fair"><label>Fair</label></td>
+                    <td><input type="radio" name="eng_writing" value="Fluent"><label>Fluent</label></td>
+                    <td><input type="radio" name="eng_writing" value="Good"><label>Good</label></td>
+                    <td><input type="radio" name="eng_writing" value="Fair"><label>Fair</label></td>
+                    <td rowspan="3" style="text-align: left;">
+                        <div class="checkbox-group"><input type="checkbox" name="comp_knowledge[]" value="Word"><label>Ms.Office Word</label></div>
+                        <div class="checkbox-group"><input type="checkbox" name="comp_knowledge[]" value="Excel"><label>Excel</label></div>
+                        <div class="checkbox-group"><input type="checkbox" name="comp_knowledge[]" value="Powerpoint"><label>Powerpoint</label></div>
+                        <div style="display: flex; align-items: center; margin-top: 5px;"><label>Others</label><input type="text" name="comp_others" style="width: 70%;"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Japanese (ภาษาญี่ปุ่น)</td>
+                    <td><input type="radio" name="jp_listen" value="Fluent"><label>Fluent</label></td>
+                    <td><input type="radio" name="jp_listen" value="Good"><label>Good</label></td>
+                    <td><input type="radio" name="jp_listen" value="Fair"><label>Fair</label></td>
+                    <td><input type="radio" name="jp_speaking" value="Fluent"><label>Fluent</label></td>
+                    <td><input type="radio" name="jp_speaking" value="Good"><label>Good</label></td>
+                    <td><input type="radio" name="jp_speaking" value="Fair"><label>Fair</label></td>
+                    <td><input type="radio" name="jp_reading" value="Fluent"><label>Fluent</label></td>
+                    <td><input type="radio" name="jp_reading" value="Good"><label>Good</label></td>
+                    <td><input type="radio" name="jp_reading" value="Fair"><label>Fair</label></td>
+                    <td><input type="radio" name="jp_writing" value="Fluent"><label>Fluent</label></td>
+                    <td><input type="radio" name="jp_writing" value="Good"><label>Good</label></td>
+                    <td><input type="radio" name="jp_writing" value="Fair"><label>Fair</label></td>
+                </tr>
+                <tr>
+                    <td>Others (อื่นๆ)<input type="text" name="lang_other_name" style="width: 50%; border-bottom: 1px dotted black;"></td>
+                    <td><input type="radio" name="other_listen" value="Fluent"><label>Fluent</label></td>
+                    <td><input type="radio" name="other_listen" value="Good"><label>Good</label></td>
+                    <td><input type="radio" name="other_listen" value="Fair"><label>Fair</label></td>
+                    <td><input type="radio" name="other_speaking" value="Fluent"><label>Fluent</label></td>
+                    <td><input type="radio" name="other_speaking" value="Good"><label>Good</label></td>
+                    <td><input type="radio" name="other_speaking" value="Fair"><label>Fair</label></td>
+                    <td><input type="radio" name="other_reading" value="Fluent"><label>Fluent</label></td>
+                    <td><input type="radio" name="other_reading" value="Good"><label>Good</label></td>
+                    <td><input type="radio" name="other_reading" value="Fair"><label>Fair</label></td>
+                    <td><input type="radio" name="other_writing" value="Fluent"><label>Fluent</label></td>
+                    <td><input type="radio" name="other_writing" value="Good"><label>Good</label></td>
+                    <td><input type="radio" name="other_writing" value="Fair"><label>Fair</label></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <label style="display: flex; align-items: center; margin-top: 5px;">Other special skills (ความสามารถพิเศษอื่นๆ):<input type="text" name="other_skills"></label>
+        
+        <div style="display: flex; margin-top: 5px;">
+            <label style="flex: 1; display: flex; align-items: center;">Hobbies (งานอดิเรก):<input type="text" name="hobbies"></label>
+            <label style="flex: 1; display: flex; align-items: center; margin-left: 20px;">Sport (กีฬา):<input type="text" name="sport"></label>
+        </div>
 
-        <h2 class="section-title">TRAINING HISTORY (ประวัติการฝึกอบรม)</h2>
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th style="width: 30%;">Training Course (ชื่อหลักสูตร)</th>
-                    <th style="width: 30%;">Institute (สถาบันที่จัด)</th>
-                    <th style="width: 15%;">Duration (ระยะเวลา)</th>
-                    <th style="width: 10%;">Year (ปี)</th>
-                    <th style="width: 15%;">Remark (หมายเหตุ)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td><input type="text" name="train_1_course"></td><td><input type="text" name="train_1_institute"></td><td><input type="text" name="train_1_duration"></td><td><input type="text" name="train_1_year"></td><td><input type="text" name="train_1_remark"></td></tr>
-                <tr><td><input type="text" name="train_2_course"></td><td><input type="text" name="train_2_institute"></td><td><input type="text" name="train_2_duration"></td><td><input type="text" name="train_2_year"></td><td><input type="text" name="train_2_remark"></td></tr>
-                <tr><td><input type="text" name="train_3_course"></td><td><input type="text" name="train_3_institute"></td><td><input type="text" name="train_3_duration"></td><td><input type="text" name="train_3_year"></td><td><input type="text" name="train_3_remark"></td></tr>
-            </tbody>
-        </table>
+        <h2 class="section-title">TRAINING HISTORY (ประวัติการฝึกอบรม)</h2>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th style="width: 30%;">Training Course (ชื่อหลักสูตร)</th>
+                    <th style="width: 30%;">Institute (สถาบันที่จัด)</th>
+                    <th style="width: 15%;">Duration (ระยะเวลา)</th>
+                    <th style="width: 10%;">Year (ปี)</th>
+                    <th style="width: 15%;">Remark (หมายเหตุ)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="Training Course (ชื่อหลักสูตร)"><input type="text" name="train_1_course"></td><td data-label="Institute (สถาบันที่จัด)"><input type="text" name="train_1_institute"></td><td data-label="Duration (ระยะเวลา)"><input type="text" name="train_1_duration"></td><td data-label="Year (ปี)"><input type="text" name="train_1_year"></td><td data-label="Remark (หมายเหตุ)"><input type="text" name="train_1_remark"></td></tr>
+                <tr><td data-label="Training Course (ชื่อหลักสูตร)"><input type="text" name="train_2_course"></td><td data-label="Institute (สถาบันที่จัด)"><input type="text" name="train_2_institute"></td><td data-label="Duration (ระยะเวลา)"><input type="text" name="train_2_duration"></td><td data-label="Year (ปี)"><input type="text" name="train_2_year"></td><td data-label="Remark (หมายเหตุ)"><input type="text" name="train_2_remark"></td></tr>
+                <tr><td data-label="Training Course (ชื่อหลักสูตร)"><input type="text" name="train_3_course"></td><td data-label="Institute (สถาบันที่จัด)"><input type="text" name="train_3_institute"></td><td data-label="Duration (ระยะเวลา)"><input type="text" name="train_3_duration"></td><td data-label="Year (ปี)"><input type="text" name="train_3_year"></td><td data-label="Remark (หมายเหตุ)"><input type="text" name="train_3_remark"></td></tr>
+            </tbody>
+        </table>
 
-        <h2 class="section-title">GENERAL INFORMATION (ข้อมูลทั่วไป)</h2>
-        
-        <div style="display: flex;">
-            <div style="flex: 1;">
-                <label style="font-weight: bold;">ความสามารถในการขับขี่ / Driving Ability</label>
-                <div style="margin-top: 5px;">
-                    <label>ขับได้ / YES <input type="radio" name="driving_ability" value="YES"></label>
-                    <label style="margin-left: 10px;">ขับไม่ได้ / NO <input type="radio" name="driving_ability" value="NO"></label>
-                </div>
-                <div style="margin-top: 10px;">
-                    <div style="display: flex; align-items: center; margin-bottom: 5px;">
-                        <label style="width: 40%;">Car (รถยนต์)</label><input type="checkbox" name="license[]" value="Car"><label style="font-size: 7pt; margin-left: 5px; width: 35%;">ใบอนุญาตขับขี่ driving license</label><input type="radio" name="license_car_status" value="YES"><label>YES</label><input type="radio" name="license_car_status" value="NO"><label>NO</label>
-                    </div>
-                    <div style="display: flex; align-items: center; margin-bottom: 5px;">
-                        <label style="width: 40%;">Motorcycle(รถมอเตอร์ไซค์)</label><input type="checkbox" name="license[]" value="Motorcycle"><label style="font-size: 7pt; margin-left: 5px; width: 35%;">ใบอนุญาตขับขี่ driving license</label><input type="radio" name="license_moto_status" value="YES"><label>YES</label><input type="radio" name="license_moto_status" value="NO"><label>NO</label>
-                    </div>
-                    <label style="display: flex; align-items: center;">Others(อื่นๆ):<input type="text" name="driving_others"></label>
-                </div>
-            </div>
-            
-            <div style="flex: 1; margin-left: 20px;">
-                <p>Have you ever been serious ill or had operation during last five years? (ท่านเคยป่วยรุนแรงหรือได้รับการผ่าตัดในช่วง 5 ปีที่ผ่านมาหรือไม่)</p>
-                <div style="display: flex; align-items: center; margin-top: 5px;"><input type="radio" name="health_history" value="YES"><label>YES (ระบุ)</label><input type="text" name="health_details" style="flex-grow: 1; margin-left: 5px;"></div>
-                <div style="margin-top: 5px;"><input type="radio" name="health_history" value="NO"><label>NO</label></div>
-                
-                <p style="margin-top: 15px;">**Have you ever been convicted to a crime? (ท่านเคยต้องคดีอาญาหรือไม่)</p>
-                <div style="display: flex; align-items: center; margin-top: 5px;"><input type="radio" name="crime_history" value="YES"><label>YES (ระบุ)</label><input type="text" name="crime_details" style="flex-grow: 1; margin-left: 5px;"></div>
-                <div style="margin-top: 5px;"><input type="radio" name="crime_history" value="NO"><label>NO</label></div>
-            </div>
-        </div>
+        <h2 class="section-title">GENERAL INFORMATION (ข้อมูลทั่วไป)</h2>
+        
+        <div style="display: flex;">
+            <div style="flex: 1;">
+                <label style="font-weight: bold;">ความสามารถในการขับขี่ / Driving Ability</label>
+                <div style="margin-top: 5px;">
+                    <label>ขับได้ / YES <input type="radio" name="driving_ability" value="YES"></label>
+                    <label style="margin-left: 10px;">ขับไม่ได้ / NO <input type="radio" name="driving_ability" value="NO"></label>
+                </div>
+                <div style="margin-top: 10px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                        <label style="width: 40%;">Car (รถยนต์)</label><input type="checkbox" name="license[]" value="Car"><label style="font-size: 7pt; margin-left: 5px; width: 35%;">ใบอนุญาตขับขี่ driving license</label><input type="radio" name="license_car_status" value="YES"><label>YES</label><input type="radio" name="license_car_status" value="NO"><label>NO</label>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                        <label style="width: 40%;">Motorcycle(รถมอเตอร์ไซค์)</label><input type="checkbox" name="license[]" value="Motorcycle"><label style="font-size: 7pt; margin-left: 5px; width: 35%;">ใบอนุญาตขับขี่ driving license</label><input type="radio" name="license_moto_status" value="YES"><label>YES</label><input type="radio" name="license_moto_status" value="NO"><label>NO</label>
+                    </div>
+                    <label style="display: flex; align-items: center;">Others(อื่นๆ):<input type="text" name="driving_others"></label>
+                </div>
+            </div>
+            
+            <div style="flex: 1; margin-left: 20px;">
+                <p>Have you ever been serious ill or had operation during last five years? (ท่านเคยป่วยรุนแรงหรือได้รับการผ่าตัดในช่วง 5 ปีที่ผ่านมาหรือไม่)</p>
+                <div style="display: flex; align-items: center; margin-top: 5px;"><input type="radio" name="health_history" value="YES"><label>YES (ระบุ)</label><input type="text" name="health_details" style="flex-grow: 1; margin-left: 5px;"></div>
+                <div style="margin-top: 5px;"><input type="radio" name="health_history" value="NO"><label>NO</label></div>
+                
+                <p style="margin-top: 15px;">**Have you ever been convicted to a crime? (ท่านเคยต้องคดีอาญาหรือไม่)</p>
+                <div style="display: flex; align-items: center; margin-top: 5px;"><input type="radio" name="crime_history" value="YES"><label>YES (ระบุ)</label><input type="text" name="crime_details" style="flex-grow: 1; margin-left: 5px;"></div>
+                <div style="margin-top: 5px;"><input type="radio" name="crime_history" value="NO"><label>NO</label></div>
+            </div>
+        </div>
 
-        <h2 class="section-title">REFERENCES (บุคคลอ้างอิง)</h2>
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th style="width: 5%;">#</th>
-                    <th style="width: 25%;">Name(ชื่อ)</th>
-                    <th style="width: 15%;">Relationship(ความสัมพันธ์)</th>
-                    <th style="width: 20%;">Occupation(อาชีพ)</th>
-                    <th style="width: 20%;">Company (บริษัท)</th>
-                    <th style="width: 15%;">Tel. No. (โทรศัพท์)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>1</td><td><input type="text" name="ref_1_name"></td><td><input type="text" name="ref_1_relationship"></td><td><input type="text" name="ref_1_occupation"></td><td><input type="text" name="ref_1_company"></td><td><input type="tel" name="ref_1_tel"></td></tr>
-                <tr><td>2</td><td><input type="text" name="ref_2_name"></td><td><input type="text" name="ref_2_relationship"></td><td><input type="text" name="ref_2_occupation"></td><td><input type="text" name="ref_2_company"></td><td><input type="tel" name="ref_2_tel"></td></tr>
-            </tbody>
-        </table>
+        <h2 class="section-title">REFERENCES (บุคคลอ้างอิง)</h2>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th style="width: 5%;">#</th>
+                    <th style="width: 25%;">Name(ชื่อ)</th>
+                    <th style="width: 15%;">Relationship(ความสัมพันธ์)</th>
+                    <th style="width: 20%;">Occupation(อาชีพ)</th>
+                    <th style="width: 20%;">Company (บริษัท)</th>
+                    <th style="width: 15%;">Tel. No. (โทรศัพท์)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td data-label="Name(ชื่อ)"><input type="text" name="ref_1_name"></td><td data-label="Relationship(ความสัมพันธ์)"><input type="text" name="ref_1_relationship"></td><td data-label="Occupation(อาชีพ)"><input type="text" name="ref_1_occupation"></td><td data-label="Company (บริษัท)"><input type="text" name="ref_1_company"></td><td data-label="Tel. No. (โทรศัพท์)"><input type="tel" name="ref_1_tel"></td></tr>
+                <tr><td>2</td><td data-label="Name(ชื่อ)"><input type="text" name="ref_2_name"></td><td data-label="Relationship(ความสัมพันธ์)"><input type="text" name="ref_2_relationship"></td><td data-label="Occupation(อาชีพ)"><input type="text" name="ref_2_occupation"></td><td data-label="Company (บริษัท)"><input type="text" name="ref_2_company"></td><td data-label="Tel. No. (โทรศัพท์)"><input type="tel" name="ref_2_tel"></td></tr>
+            </tbody>
+        </table>
 
-        <div style="margin-top: 20px; font-size: 8pt; line-height: 1.2;">
-            <p>I hereby certify that all the provided information is true the best of me knowledge. I voluntarily give the company the right to carry out whatever reference-check and If company accepted to work I agree to use collect and check that such information at any time as necessary, any necessary based on the above information of its consideration. I undertake to render any assistance necessary. Finally, I understand that any false information provided or false statements in the course of the interview, it would be sufficient grounds for non-employment or if already employed, for dismissal for just cause.</p>
-            <p>ข้าพเจ้าขอรับรองว่าข้อมูลทั้งหมดที่ให้ไว้เป็นความจริงสมบูรณ์ถูกต้องที่สุดตามที่ข้าพเจ้าทราบและเชื่อมั่น ข้าพเจ้ายินดีให้บริษัทท่าการตรวจสอบประวัติของข้าพเจ้าตามที่ ข้าพเจ้าได้เขียนมาสุดแล้วแต่ทางบริษัทจะเห็นเป็นสมควรและหากบริษัทรับข้าพเจ้าท่างานแล้ว ข้าพเจ้ายินยอมให้ใช้จัดเก็บตรวจสอบข้อมูลดังกล่าวได้ดลอดเวลาตามที่จําเป็น ข้าพเจ้ายินดีที่จะให้ความสนับสนุนเท่าที่จำเป็นแก่บริษัทอีกด้วย ที่สุดนี้ข้าพเจ้าเข้าใจดีว่าการปิดบังหรือให้ข้อความไม่ตรงกับความเป็นจริงในใบสมัครนี้จะมีผลให้ข้าพเจ้าหมดสิทธิ ในการพิจารณาเข้าเป็นพนักงานของบริษัทหรือถูกเลิกจ้างในภายหลังที่ได้รับการเข้าทางานแล้ว ซึ่งหมายถึงการจ้างแรงงานที่ได้ทำขึ้นถือเป็นโมฆะ</p>
-        </div>
+        <div style="margin-top: 20px; font-size: 8pt; line-height: 1.2;">
+            <p>I hereby certify that all the provided information is true the best of me knowledge. I voluntarily give the company the right to carry out whatever reference-check and If company accepted to work I agree to use collect and check that such information at any time as necessary, any necessary based on the above information of its consideration. I undertake to render any assistance necessary. Finally, I understand that any false information provided or false statements in the course of the interview, it would be sufficient grounds for non-employment or if already employed, for dismissal for just cause.</p>
+            <p>ข้าพเจ้าขอรับรองว่าข้อมูลทั้งหมดที่ให้ไว้เป็นความจริงสมบูรณ์ถูกต้องที่สุดตามที่ข้าพเจ้าทราบและเชื่อมั่น ข้าพเจ้ายินดีให้บริษัทท่าการตรวจสอบประวัติของข้าพเจ้าตามที่ ข้าพเจ้าได้เขียนมาสุดแล้วแต่ทางบริษัทจะเห็นเป็นสมควรและหากบริษัทรับข้าพเจ้าท่างานแล้ว ข้าพเจ้ายินยอมให้ใช้จัดเก็บตรวจสอบข้อมูลดังกล่าวได้ดลอดเวลาตามที่จําเป็น ข้าพเจ้ายินดีที่จะให้ความสนับสนุนเท่าที่จำเป็นแก่บริษัทอีกด้วย ที่สุดนี้ข้าพเจ้าเข้าใจดีว่าการปิดบังหรือให้ข้อความไม่ตรงกับความเป็นจริงในใบสมัครนี้จะมีผลให้ข้าพเจ้าหมดสิทธิ ในการพิจารณาเข้าเป็นพนักงานของบริษัทหรือถูกเลิกจ้างในภายหลังที่ได้รับการเข้าทางานแล้ว ซึ่งหมายถึงการจ้างแรงงานที่ได้ทำขึ้นถือเป็นโมฆะ</p>
+        </div>
 
-        <div style="display: flex; justify-content: flex-end; margin-top: 30px; font-size: 9pt;">
-            <div style="text-align: right;">
-                <div style="display: flex; align-items: flex-end;">
-                    <label>ลงชื่อผู้สมัคร / Signature:</label>
-                    <input type="text" name="applicant_signature_text" style="width: 250px; margin-left: 10px; border-bottom: 1px dotted black; font-size: 10pt;"> 
-                </div>
-                <div style="display: flex; align-items: flex-end; margin-top: 10px;">
-                    <label>Date (วันที่):</label>
-                    <input type="date" name="signature_date" style="width: 100px; margin-left: 10px;">
-                    <span style="margin: 0 5px;">/</span>
-                    <span style="margin: 0 5px;">/</span>
-                </div>
-            </div>
-        </div>
-        
-        <div style="font-size: 7pt; text-align: right; margin-top: 5px;">
-            FM-HR30/HRM-A-003 Rev.03 (21/Jun/22) Approved HRM
-        </div>
+        <div style="display: flex; justify-content: flex-end; margin-top: 30px; font-size: 9pt;">
+            <div style="text-align: right;">
+                <div style="display: flex; align-items: flex-end;">
+                    <label>ลงชื่อผู้สมัคร / Signature:</label>
+                    <input type="text" name="applicant_signature_text" style="width: 250px; margin-left: 10px; border-bottom: 1px dotted black; font-size: 10pt;"> 
+                </div>
+                <div style="display: flex; align-items: flex-end; margin-top: 10px;">
+                    <label>Date (วันที่):</label>
+                    <input type="date" name="signature_date" style="width: 100px; margin-left: 10px;">
+                    <span style="margin: 0 5px;">/</span>
+                    <span style="margin: 0 5px;">/</span>
+                </div>
+            </div>
+        </div>
+        
+        <div style="font-size: 7pt; text-align: right; margin-top: 5px;">
+            FM-HR30/HRM-A-003 Rev.03 (21/Jun/22) Approved HRM
+        </div>
 
-        <div style="text-align: center; margin-top: 20px;">
-            <button type="button" class="submit-button" onclick="window.print()" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; cursor: pointer;">บันทึกใบสมัคร (Save Application)</button>
-        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <button type="button" class="submit-button" onclick="window.print()" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; cursor: pointer;">บันทึกใบสมัคร (Save Application)</button>
+        </div>
 
-    </form>
+    </form>
 </body>
 </html>
-
